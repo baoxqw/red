@@ -1,0 +1,7 @@
+<!--page/component/inform/look/look.wxml-->
+<view class="top">
+  <view class="title">{{informDetail.title}}</view>
+  <view class="time">{{time}}</view>
+  <view class="notice">{{informDetail.notice}}</view>
+</view>
+

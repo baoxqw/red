@@ -1,0 +1,25 @@
+<!-- item.id用于遍历 -->
+<!-- 商品等级占比 -->
+<view class="can">
+ <view class="title">商品等级占比</view>
+  <canvas class="canvas" canvas-id="pieGraph"></canvas>
+</view>
+
+<!-- 商品重量 -->
+<view class="can">
+ <view class="title">
+  商品重量
+  <view class="weightSum">总重量:{{weight}}kg</view>
+  </view>
+  <canvas class="canvas" canvas-id="pieGraphTwo"></canvas>
+</view>
+
+
+<!-- 货物等级数量 -->
+<view class="can colu">
+ <view class="title">
+  货物等级数量
+  <view class="weightSum">总数量：{{num}}</view>
+  </view>
+  <canvas class="canvas" canvas-id="columnCanvas"></canvas>
+</view>

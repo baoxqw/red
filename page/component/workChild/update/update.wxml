@@ -1,0 +1,97 @@
+<!--page/component/add/add.wxml-->
+<!-- //遮罩层 -->
+<block wx:if="{{mask}}">
+  <view class="mask"></view>
+</block>
+<form catchsubmit="formSubmit" catchreset="formReset">
+  <view class="add-main">
+
+    <!-- 加工子批次名称： -->
+    <view class="top-fir">
+      <view class="add-name">加工子批次名称：</view>
+      <input class="inputName" value="{{list.childbatchname}}" name="childbatchname" placeholder='请输入' placeholder-style='color:rgb(0,0,0);font-size:25rpx;'></input>
+    </view>
+    <!-- 加工子批次名称： -->
+    <view class='top-fir'>
+      <view class='add-name'>加工批次名称：</view>
+      <view class="page__bd">
+        <view class="weui-btn-area" bindchange="bindPickerChange">
+          <picker bindchange="bindPickerChange" value="{{index}}" range="{{workarray}}" range-key='label'>
+            <view wx:if="{{workvalue == 1}}">{{manage}}</view>
+            <view wx:else="{{workarray != 1}}">{{workarray[index].label}}</view>
+          </picker>
+        </view>
+      </view>
+      <!-- 下拉框 -->
+      <!-- <view class='list-msg2' bindtap='manShowMsg'>
+        <text>{{manage}}</text>
+        <image style='height:20rpx;width:20rpx;' src='../../../../image/triangle-down@2x.png'></image>
+      </view> -->
+      <!-- 下拉需要显示的列表 -->
+      <!-- <scroll-view scroll-y="true" style="height: 200rpx;">
+        <view class="select_box" wx:if="{{selectman}}" wx:for="{{selectmanSource}}" wx:for-index wx:for-item>
+            <input style='display:none' value="{{item.name}}" name="{{item.name}}"></input>
+            <view class="select_one" bindtap="manSelect" data-name="{{item.label}}" data-id="{{item.value}}" name="{{item.label}}">
+            {{item.label}}
+            </view>
+        </view>
+      </scroll-view> -->
+    </view>
+    <!-- 子批次负责人： -->
+    <view class="top-fir">
+      <view class="add-name">子批次负责人：</view>
+      <input class="inputName" value="{{list.subprocessername}}" name="subprocessername" 
+      placeholder='请输入' placeholder-style='color:rgb(0,0,0);font-size:25rpx;'></input>
+    </view>
+    <!-- 加工子批次等级： -->
+    <view class='top-fir'>
+      <view class='add-name'>加工子批次等级：</view>
+      <view class="page__bd">
+        <view class="weui-btn-area" bindchange="levelbindPickerChange">
+          <picker bindchange="levelbindPickerChange" value="{{index}}" range="{{levelarray}}" range-key='label'>
+            <view wx:if="{{levelvalue == 1}}">{{manageCh}}</view>
+            <view wx:else="{{levelvalue  != 1}}">{{levelarray[index].label}}</view>
+          </picker>
+        </view>
+      </view>
+
+      <!-- 下拉框 -->
+      <!-- <view class='list-msg2' bindtap='manShowMsgCh'>
+        <text>{{manageCh}}</text>
+        <image style='height:20rpx;width:20rpx;' src='../../../../image/triangle-down@2x.png'></image>
+      </view> -->
+      <!-- 下拉需要显示的列表 -->
+      <!-- <scroll-view scroll-y="true" style="height: 200rpx;">
+        <view class="select_box" wx:if="{{selectmanCh}}" wx:for="{{selectmanSourceCh}}" wx:for-index wx:for-item>
+            <input style='display:none' value="{{item.name}}" name="{{item.name}}"></input>
+            <view class="select_one" bindtap="manSelectCh" data-name="{{item.label}}" data-id="{{item.value}}" name="{{item.label}}">
+            {{item.label}}
+            </view>
+        </view>
+      </scroll-view> -->
+    </view>
+
+    <!-- 子批次规格： -->
+    <view class="top-fir">
+      <view class="add-name">子批次规格：</view>
+      <input class="inputName" value="{{list.childbatchpackagesize}}" name="childbatchpackagesize" placeholder='请输入' placeholder-style='color:rgb(0,0,0);font-size:25rpx;'></input>
+    </view>
+    <!-- 子批次重量： -->
+    <view class="top-fir">
+      <view class="add-name">子批次重量：</view>
+      <input class="inputName" bindinput='check' value="{{list.childbatchpackageweight}}" name="childbatchpackageweight" placeholder='0' placeholder-style='color:rgb(0,0,0);font-size:25rpx;'></input>kg
+    </view>
+    <!-- 子批次加工时间： -->
+    <view class="top-fir timer">
+      <view class='add-name timer-title'>子批次加工时间：</view>
+      <picker mode="date" value="{{date}}"  bindchange="bindDateChange">
+        <view class="picker" id="pic">
+          {{dates}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class="sub">
+    <button formType="submit"> 提交 </button>
+  </view>
+</form>

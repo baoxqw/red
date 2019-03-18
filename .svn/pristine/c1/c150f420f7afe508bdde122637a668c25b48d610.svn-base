@@ -1,0 +1,5 @@
+<!--page/component/index.wxml-->
+<view class='squre' wx:for="items" wx:for-index="index">
+  <!-- <image src="{{items.url}}"></image> -->
+  <view class="infor">{{items.title}}66</view>
+</view>

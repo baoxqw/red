@@ -1,0 +1,192 @@
+/* page/component/add/add.wxss */
+.top-fir{
+  width:100%;
+  height:98rpx;
+  font-size: 30rpx;
+  box-sizing: border-box;
+  padding:22rpx 0 22rpx 20rpx;
+  border-bottom:1px solid rgb(240,240,240)
+}
+.top-fir>view{
+  display: inline-block;
+  float: left;
+  height:50rpx;
+  margin-right:20rpx;
+  line-height: 50rpx;
+  color:rgb(138,138,138);
+  font-size: 28rpx;
+  text-align: right;
+  width:105rpx!important;
+}
+.top-fir>input{
+  display: inline-block;
+  float: left;
+  height:50rpx;
+  line-height: 50rpx;
+}
+.add-main{
+  min-height:500rpx;
+  font-size: 24rpx;
+  color:rgb(25,139,254);
+}
+.main-title{
+  height:72rpx;
+  line-height: 72rpx;
+  box-sizing: border-box;
+  padding:0 20rpx;
+}
+.main-squre{
+  height:150rpx;
+  border-bottom:1px solid rgb(240,240,240);
+  position: relative;
+}
+/* 下拉框 */
+.list-msg2{
+  color:rgb(138,138,138);
+  font-size: 28rpx;
+  height:60rpx;
+}
+.list-msg2 text{
+  margin-left:20rpx;
+  float: left;
+}
+.list-msg2 image{
+  margin-top:10rpx;
+  margin-right:20rpx;
+  float: right;
+}
+.select_box{
+  position: relative;
+  background-color: #fbf9fe;
+  padding: 0 10rpx;
+  line-height: 50rpx;
+  color:black;
+  left:2%;
+  width: 93%;
+  z-index: 666;
+  overflow: hidden;
+  animation: myfirst 0.5s;
+}
+@keyframes myfirst {
+    from {
+        height: 0rpx;
+    }
+ 
+    to {
+        height: 60rpx;
+    }
+}
+
+.select_one {
+  color:rgb(138,138,138);
+  height: 60rpx;
+  line-height: 60rpx;
+  border-bottom: 1px solid #ccc;
+}
+/* 上传图片 */
+.box{
+  position: relative;
+}
+.educt_hasupload_pic{
+  width:200rpx;
+  height:200rpx;
+  display: inline-block;
+  position: relative;
+}
+.autoComplete imgage{
+  width:100%;
+  height:100%;
+}
+.upload{
+  width:150rpx;
+  height:150rpx;
+  margin:20rpx;
+
+}
+.deltel{
+  position: absolute;
+  right:4px;
+  top:0;
+  width:50rpx;
+  height:50rpx;
+
+}
+.educt_upload_add{
+  display: inline-block;
+  width:150rpx;
+  height:150rpx;
+}
+.educt_upload_add image{
+  width:100%;
+  height:100%;
+}
+/* 日期选择 */
+.timer-title{
+  height:72rpx;
+  line-height: 72rpx;
+  margin-left:24rpx;
+}
+.timer picker{
+  width:100%;
+
+}
+.timer .picker{
+  width:70%;
+  height:70rpx;
+  line-height: 70rpx;
+  margin-left:15%;
+  box-sizing: border-box;
+  padding-right:60rpx;
+  background:url(https://lg-3jb3svnw-1257044323.cos.ap-shanghai.myqcloud.com/publish-solid-bottom.png) no-repeat right center;
+  background-size:35rpx 35rpx;
+}
+/* 地区选择 */
+.area-title{
+  height:72rpx;
+  line-height: 72rpx;
+  margin-left:24rpx;
+}
+.publish-right{
+  box-sizing: border-box;
+  text-align: center;
+}
+picker{
+  width:100%;
+  margin-top:12rpx;
+  overflow: hidden;
+  color:#000;
+}
+.picker{
+  width:170rpx;
+  overflow:hidden;
+  border:1rpx solid #ededed;
+  padding:0 20rpx;
+  border-radius:10rpx;margin:5rpx 10rpx 0 0;
+  background:linear-gradient(#ecedef,#edf1f2,#e0e4e7);
+  box-sizing:border-box;
+  display:inline-block;
+  }
+.picker text{
+  line-height:40rpx;
+  width:100%x;
+  display:block;
+   height:42rpx;
+   overflow:hidden;
+   padding-right:40rpx;
+   box-sizing:border-box;
+   background:url(https://lg-3jb3svnw-1257044323.cos.ap-shanghai.myqcloud.com/publish-solid-bottom.png) no-repeat right center;              background-size:35rpx 35rpx;
+}
+/* 提交 */
+.sub{
+  position: absolute;
+  bottom:5%;
+  width:89%;
+  left:5%;
+}
+.sub button{
+  width:100%;
+  height:100%;
+  background: rgb(25,139,254);
+  color:#fff;
+  border-radius: 50rpx;
+}

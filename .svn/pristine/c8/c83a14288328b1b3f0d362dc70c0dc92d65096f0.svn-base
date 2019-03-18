@@ -1,0 +1,10 @@
+/* page/component/index.wxss */
+.squre{
+  width:50%;
+  height:50rpx;
+  float: left;
+  text-align: center;
+}
+.squre img{
+  width:50rpx;
+}

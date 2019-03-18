@@ -1,0 +1,90 @@
+<!--page/component/add/add.wxml-->
+<!-- //遮罩层 -->
+<block wx:if="{{mask}}">
+  <view class="mask"></view>
+</block>
+<form catchsubmit="formSubmit" catchreset="formReset">
+  <view class="add-main">
+    <!-- 支付状态： -->
+    <view class='main-squre'>
+      <view class='main-title'>支付状态：</view>
+      <view class="page__bd main-name">
+        <view class="weui-btn-area" bindchange="statebindPickerChange">
+          <picker bindchange="statebindPickerChange" value="{{statearray[stateindex]}}" range="{{statearray}}" range-key='label'>
+            <view class="named" wx:if="{{ispay == 1}}">{{pay}}</view>
+            <view class="named" wx:else>{{statearray[stateindex].label}}</view>
+          </picker>
+        </view>
+      </view>
+    </view>
+    <!-- 农资大类 -->
+    <view class='main-squre'>
+      <view class='main-title'>农资大类：</view>
+      <view class="page__bd main-name">
+        <view class="weui-btn-area" bindchange="bigbindPickerChange">
+          <picker bindchange="bigbindPickerChange" value="{{bigarray[bigindex]}}" range="{{bigarray}}" range-key='label'>
+            <view class="named" wx:if="{{isbig == 1}}">{{bigfarm}}</view>
+            <view class="named" wx:else>{{bigarray[bigindex].label}}</view>
+          </picker>
+        </view>
+      </view>
+    </view>
+    <!-- 农资小类 -->
+    <view class='main-squre'>
+      <view class='main-title'>农资类型：</view>
+      <view class="page__bd main-name">
+        <view class="weui-btn-area" bindchange="typebindPickerChange">
+          <picker bindchange="typebindPickerChange" value="{{typearray[typeindex]}}" range="{{typearray}}" range-key='label'>
+            <view class="named" wx:if="{{istype == 1}}">{{smfarm}}</view>
+            <view class="named" wx:else="{{typearray}}">{{typearray[typeindex].label}}</view>
+          </picker>
+        </view>
+      </view>
+    </view>
+    <!-- 农资名称 -->
+    <view class='main-squre'>
+      <view class='main-title'>农资名称：</view>
+      <view class="page__bd main-name">
+        <view class="weui-btn-area" bindchange="namebindPickerChange">
+          <picker bindchange="namebindPickerChange" value="{{namearray[nameindex]}}" range="{{namearray}}" range-key='label'>
+            <view class="named" wx:if="{{isname == 1}}">{{namefarm}}</view>
+            <view class="named" wx:else="{{namearray}}">{{namearray[nameindex].label}}</view>
+          </picker>
+        </view>
+      </view>
+    </view>
+    <!-- 购买者： -->
+    <view class="top-fir">
+      <view class="add-name">购买者：</view>
+      <input class="inputName" value="{{formData.purchasecredit}}" name="user" placeholder='请输入' placeholder-style='color:#777;font-size:30rpx;'></input>
+    </view>
+    <!-- 购买数量： -->
+    <view class="top-fir">
+      <view class="add-name">购买数量：</view>
+      <input class="inputName" value="{{formData.num}}" type="number" name="usenum" placeholder='0' bindinput='check' placeholder-style='color:#777;font-size:30rpx;'></input>
+    </view>
+    <!-- 购买总价： -->
+    <view class="top-fir">
+      <view class="add-name">购买总价：</view>
+      <input class="inputName" value="{{formData.price}}" type="number" name="usesum" bindinput='check' placeholder='0' placeholder-style='color:#777;font-size:30rpx;'></input>元
+    </view>
+    <!-- 日期选择 -->
+    <view class="top-fir">
+      <view class='add-name'>采购时间：</view>
+      <picker class="pic" mode="date" value="{{date}}" bindchange="bindDateChange">
+        <view class="picker pp">
+          {{dates}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <!-- 文本框 -->
+  <view class="topall topdesc">
+    <view class='add-name bei'>其他：</view>
+    <text style='display:none'>{{currentInput}}</text>
+    <textarea class="weui-textarea" placeholder="请输入描述" value="{{currentInput}}" bindinput="getInput" placeholder-style='color:rgb(168, 165, 165);font-size:30rpx;' maxlength="1000" />
+  </view>
+  <view class="sub">
+    <button formType="submit"> 提交 </button>
+  </view>
+</form>

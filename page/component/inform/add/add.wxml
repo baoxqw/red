@@ -1,0 +1,31 @@
+<!--page/component/add/add.wxml-->
+<!-- //遮罩层 -->
+<block wx:if="{{mask}}">
+  <view class="mask"></view>
+</block>
+<form catchsubmit="formSubmit" catchreset="formReset">
+    <!-- 标题： -->
+    <view class="top-fir">
+      <view class="add-name">标题：</view>
+      <input class="inputName" value="" name="title" placeholder='这里填写正文标题' 
+      placeholder-style='color:#777;font-size:30rpx;'></input>
+    </view>
+    <!-- 备注 -->
+    <view class="top-fir">
+      <view class="add-name">备注：</view>
+      <input class="inputName" value="" name="descri" placeholder='这里填写正文备注' 
+       placeholder-style='color:#777;font-size:30rpx;'></input>
+    </view>
+    <!-- 正文 -->
+    <view class="topall topdesc">
+      <view class='add-name bei'>正文：</view>
+      <text style='display:none'>{{currentInput}}</text>
+      <textarea class="weui-textarea" placeholder="这里填写正文描述" bindinput="getInput"
+       placeholder-style='color:#777;font-size:30rpx;' maxlength="1000"/>
+    </view>
+    <!-- 提交 -->
+    <view class="sub">
+      <button formType="submit"> 提交 </button>
+    </view>
+</form>
+

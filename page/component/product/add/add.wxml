@@ -1,0 +1,77 @@
+<!--page/component/add/add.wxml-->
+<!-- //遮罩层 -->
+<block wx:if="{{mask}}">
+  <view class="mask"></view>
+</block>
+<form catchsubmit="formSubmit" catchreset="formReset">
+ <!-- <view class="addOrder">添加销售产品信息</view> -->
+  <view class="main-squre">
+    <view class="con-main">
+       <view class='main-title'>商品名称：</view>
+        <input class="inputName" value="" name="name" 
+        placeholder='请输入' placeholder-style='color:rgb(138,138,138); font-size:30rpx;'></input>
+    </view>
+    <!-- 货物等级 -->
+    <view class='con-main'>
+      <view class='main-title'>货物等级：</view>
+      <!-- 下拉框 -->
+      <view class="page__bd ccc" >
+        <view class="weui-btn-area" bindchange="bindPickerChange">
+          <picker bindchange="bindPickerChange" value="{{index}}" range="{{workarray}}" range-key='label'>
+            <view class="named" wx:if="{{workarray.length<1}}">暂无</view>
+            <view class="named" wx:else="{{workarray}}">{{workarray[index].label}}</view>
+          </picker>
+        </view>
+      </view>
+      
+      <!-- 下拉需要显示的列表 -->
+    </view>
+    <view class="con-main">
+       <view class='main-title'>商品规则：</view>
+        <input class="inputName" value="" name="size" 
+        placeholder='例：80 x 120 cm' placeholder-style='color:rgb(138,138,138);font-size:30rpx;'></input>
+    </view>
+        <!-- 采摘过程图片 -->
+    <view class="squre-pic">
+      <view class='main-title'>采摘过程图片：</view>
+      <view class="page__bd">
+        <view class="weui-cells">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <view class="weui-uploader">
+                        <!-- <view class="weui-uploader__hd">
+                            <view class="weui-uploader__title">图片上传</view>
+                            <view class="weui-uploader__info">{{files.length}}</view>
+                        </view> -->
+                        <view class="weui-uploader__bd">
+                            <view class="weui-uploader__files" id="uploaderFiles">
+                                <block wx:for="{{files}}" wx:key="*this">
+                                    <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+                                    <image bindtap='clearImg' class="clearImg" src="../../../../image/clean@2x.png" data-index="{{index}}"></image>
+                                        <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                                    </view>
+                                </block>
+                            </view>
+                            <view class="weui-uploader__input-box">
+                                <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+      </view>
+    </view>
+    <!-- 商品描述 -->
+      <view class="topall topdesc">
+        <view class='main-title'>备注：</view>
+          <text style='display:none'>{{currentInput}}</text>
+          <textarea class="weui-textarea" placeholder="请输入描述" bindinput="getInput"
+          placeholder-style='color:rgb(138,138,138);font-size:30rpx;' maxlength="1000"/>
+    </view>
+  </view>
+  <view class="sub">
+    <button formType="submit"> 提交 </button>
+  </view>
+</form>
+

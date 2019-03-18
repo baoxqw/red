@@ -1,0 +1,78 @@
+<view class="search">
+  <view class="sea">
+    <image src="../../../../image/search@2x.png"></image>
+    <view class="box">
+      <input class="{{add == true?'short':'long'}}" placeholder='请输入标题' placeholder-style='color:rgb(174,174,174)' name="searchValue" bindinput="userNameInput"></input>
+      <block wx:if="{{add==true}}">
+        <view class="add addOrder" catchtap='add'>
+          添加消息通知
+        </view>
+      </block>
+    </view>
+
+    <view class="inform-in">
+      <view class="{{nn == 1 ?'blued':''}}" bindtap="all">全部</view>
+      <view class="create" class="{{nn == 2 ?'blued':''}}" bindtap="create">我创建的</view>
+      <view class="accept" class="{{nn == 3 ?'blued':''}}" bindtap="accept">我接受的</view>
+    </view>
+  </view>
+</view>
+<view class="list {{index == 0 ? 'first' : ''}}" wx:for="{{lists}}" wx:for-item wx:for-index>
+  <view class="list-infor" bindtap="navigatorToLook" data-data="{{item}}">
+    <!-- <view class="list-tit">{{item.massifName}}</view> -->
+    <view class="list-con">
+      <view class="theor">标题：</view>
+      <view class="thetrueor">{{item.title}}</view>
+    </view>
+    <view class="list-con">
+      <view class="or">备注：</view>
+      <view class="trueor">{{item.description}}</view>
+    </view>
+    <view class="list-con">
+      <view class="or">发布人：</view>
+      <view class="trueor">{{item.username}}</view>
+    </view>
+    <view class="list-con">
+      <view class="or">发布时间：</view>
+      <view class="trueor">{{item.uploadtime}}</view>
+    </view>
+  </view>
+  <view class="list-btn">
+    <!-- <block wx:if="{{add==true}}">
+      <view class="list-add" bindtap="onChangeShowRoundState">添加轮次</view>
+    </block> -->
+    <!-- <view bindtap="navigatorTo" data-data="{{item}}">
+      <block wx:if="{{update==true}}">
+        <view class="list-up">编辑</view>
+      </block>
+    </view> -->
+    <view class="list-detail" bindtap="navigatorToLook" data-data="{{item}}">查看</view>
+    <!-- <block wx:if="{{deleted==true}}">
+      <view class="list-del" bindtap="onChangeShowState" data-data="{{item.id}}">删除</view>
+    </block> -->
+    <!-- 删除信息 -->
+    <view class="{{showView ? 'del-wrap_show' : 'del-wrap_hide'}}">
+      <view class='del'>
+        <view class="delate">确认删除该信息?</view>
+        <view class="no" catchtap='no'>取消</view>
+        <view class="yes" catchtap='yes'>确认</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 添加轮次 -->
+<view class="{{showAdd ? 'round_show' : 'round_hide'}}">
+  <view class='addround'>
+    <view class="roundTitle">添加种植轮次</view>
+    <view class="roundMain">
+      <view>关键词</view>
+      <input></input>
+    </view>
+    <view class="roundBtn">
+      <view class="roundNo" catchtap='roundNo'>取消</view>
+      <view class="roundYes" catchtap='roundYes'>确定</view>
+    </view>
+  </view>
+</view>
+<view class="bottom-line" wx:if="{{bottomLineShow==true}}">——我是有底线的——</view>

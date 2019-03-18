@@ -1,0 +1,7 @@
+<view class="section">  
+  <picker mode="date" value="{{date}}"  bindchange="bindDateChange">  
+    <view class="picker">  
+      日期: {{dates}}  
+    </view>  
+  </picker>  
+</view>  

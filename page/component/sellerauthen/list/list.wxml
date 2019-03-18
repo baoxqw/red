@@ -1,0 +1,158 @@
+<!--page/component/add/add.wxml-->
+<!-- //遮罩层 -->
+<block wx:if="{{mask}}">
+  <view class="mask"></view>
+</block>
+
+<form catchsubmit="formSubmit" catchreset="formReset">
+  <view class="logo">当前审核状态：{{state}}</view>
+  <view class="add-top">
+
+    <view class="top-fir">
+      <view class="add-name last">企业名称：</view>
+      <input class="inputName" value="{{lists.shopname}}" name="shopname" placeholder='请输入'
+       placeholder-style='color:rgb(0,0,0);font-size:25rpx;'></input>
+    </view>
+
+    <view class="top-fir">
+      <view class="add-name last">负责人姓名：</view>
+      <input class="inputName" value="{{lists.sellername}}" name="sellername" placeholder='请输入'
+       placeholder-style='color:rgb(0,0,0);font-size:25rpx;'></input>
+    </view>
+
+    <view class="top-fir">
+      <view class="add-name last">身份证号：</view>
+      <input class="inputName long" type="number" bindinput="check" name="idcardnum" value="{{lists.idcardnum}}"
+       placeholder='0' placeholder-style='color:rgb(0,0,0);font-size:25rpx;'></input>
+    </view>
+
+     <view class="top-fir">
+      <view class="add-name last">社会统一信用代码：</view>
+      <input class="inputName dai" type="number" bindinput="check" name="creditcode" value="{{lists.creditcode}}" placeholder='0'
+       placeholder-style='color:rgb(0,0,0);font-size:25rpx;'></input>
+    </view>
+    
+  </view>
+
+  <view class="add-main">
+    <!-- 社会统一信用代码图片： -->
+    <view class="squre-pic">
+      <view class='main-title last'>社会统一信用代码图片：</view>
+      <view class="page__bd">
+        <view class="weui-cells">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <view class="weui-uploader">
+                        <view class="weui-uploader__bd">
+                            <view class="weui-uploader__files" id="uploaderFiles">
+                                <block wx:for="{{files}}" wx:key="*this">
+                                    <view class="weui-uploader__file xinpic" bindtap="previewImage" id="{{item}}">
+                                        <image bindtap='clearImg' class="clearImg" src="../../../../image/clean@2x.png" data-index="{{index}}"></image>
+                                        <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                                    </view>
+                                </block>
+                            </view>
+                            <view class="weui-uploader__input-box">
+                                <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+      </view>
+    </view>
+        <!-- 身份证照片 -->
+    <view class="squre-pic">
+      <view class='main-title'>身份证照片：</view>
+      <view class="page__bd">
+        <view class="weui-cells">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <view class="weui-uploader">
+                        <view class="weui-uploader__bd">
+                            <view class="weui-uploader__files birpic" id="uploaderFiles">
+                                <block wx:for="{{birthfiles}}" wx:key="*this">
+                                    <view class="weui-uploader__file"  id="{{item}}">
+                                    <image bindtap='birclearImg' class="birclearImg" src="../../../../image/clean@2x.png" data-index="{{index}}"></image>
+                                        <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                                    </view>
+                                </block>
+                            </view>
+                            <view class="weui-uploader__input-box">
+                                <view class="weui-uploader__input" bindtap="choosebirthImage"></view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+      </view>
+    </view>
+  </view> 
+
+  <!--详细地址：  -->
+  <view class="top-fir">
+    <view class="add-name last">详细地址：</view>
+    <input class="inputName long" type="number" name="address" placeholder='0' value="{{lists.address}}"
+      placeholder-style='color:rgb(0,0,0);font-size:25rpx;'></input>
+  </view>
+  <!-- 销售形式 -->
+  <view class="radio">
+      <view class="add-name last lastone">销售形式：</view>
+      <view class="weui-cells weui-cells_after-title">
+        <radio-group bindchange="radioChange">
+            <label class="weui-cell weui-check__label" wx:for="{{radioItems}}" wx:key="value">
+                <radio class="weui-check" value="{{item.value}}" checked="{{item.checked}}"/>
+                <view class="weui-cell__bd">{{item.name}}</view>
+                <view class="weui-cell__ft weui-cell__ft_in-radio" wx:if="{{item.checked}}">
+                    <icon class="weui-icon-radio" type="success_no_circle" size="16"></icon>
+                </view>
+            </label>
+        </radio-group> 
+    </view>
+  </view>
+  <!-- 联系电话 -->
+ <view class="top-fir">
+    <view class="add-name last">联系电话：</view>
+    <input class="inputName" type="number" bindinput="check" name="telphone" placeholder='0' value="{{lists.telphone}}"
+      placeholder-style='color:rgb(0,0,0);font-size:25rpx;'></input>
+  </view>
+  <!-- 地区选择 -->
+  <view class="area">
+    <view class='area-title last lastone'>地区选择：</view>
+        <view class="item" catchtap='goshow'>
+     <text class="item-content">{{province}} {{city}} {{area}}</text>
+    <!-- <text class="item-content">{{reprovince}} {{recity}} {{rearea}}</text> -->
+    <!-- <image class="addressPic" src="../../image/arrowright.png"></image> -->
+  </view>
+  <view class="{{show == true?'showAddress':'noshow'}}" >
+    <view class="btn">
+      <view class="nobtn" catchtap='n'>取消</view>
+      <view class="yesbtn" catchtap='y'>确定</view>
+    </view>
+      <picker-view indicator-style="height: 50px;" style="width: 100%;height: 150px;text-align: center" 
+          value="{{prIndex}}" bindchange="changeProvince2">
+        <picker-view-column>
+          <view wx:for="{{placeArray}}" wx:key="name" style="line-height: 50px">{{item.label}}</view>
+        </picker-view-column>
+    </picker-view>
+    <picker-view indicator-style="height: 50px;" style="width: 100%;height: 150px;text-align: center" 
+      value="{{crIndex}}" bindchange="changeCity2">
+      <picker-view-column>
+        <view wx:for="{{placeArray[pIndex].children}}" wx:key="name" style="line-height: 50px">{{item.label}}</view>
+      </picker-view-column>
+    </picker-view>
+    <picker-view indicator-style="height: 50px;" style="width: 100%;height: 150px;text-align: center"
+       value="{{arIndex}}" bindchange="changeArea2">
+      <picker-view-column>
+        <view wx:for="{{placeArray[pIndex].children[cIndex].children}}" wx:key="*this" style="line-height: 50px">{{item.label}}</view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+    </view> 
+  <view class="sub">
+    <button formType="submit" class="{{num==0 ? 'bc_blue':'bc_grey'}}" disabled="{{sure}}" > 提交 </button>
+  </view>
+</form>
+

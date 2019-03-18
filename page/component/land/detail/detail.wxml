@@ -1,0 +1,79 @@
+<view class="alldetail">
+  <view class="list-con">
+    <view class="therig">地块名称：</view>
+    <view class="trueor">{{lists.name}}</view>
+  </view>
+  <view class="list-con">
+    <view class="therig">作物品种：</view>
+    <view class="trueor">{{lists.croptypeStr}}</view>
+  </view>
+  <view class="list-con">
+    <view class="therig">地块面积(亩)：</view>
+    <view class="trueor">{{lists.area}}</view>
+  </view>
+  <!-- 地块名称选择 -->
+  <view class='list-con turn-con'>
+    <view class='therig'>种植轮次：</view>
+    <block wx:if="{{turn.length>1}}">
+      <scroll-view scroll-y="true" class="big">
+        <view class="turnname" wx:for="{{turn}}" wx:for-item wx:for-index value="{{index}}">
+          <view class="tt">{{turn[index]}}</view>
+        </view>
+      </scroll-view>
+    </block>
+    <block wx:else>
+      <view>暂无轮次</view>
+    </block>
+    <!-- <view class="page__bd">
+      <view class="weui-btn-area" bindchange="bindPickerChange">
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" range-key='label'>
+          <view wx:if="{{array.length<1}}">暂无轮次</view>
+          <view wx:else="{{array}}">{{array[index].label}}</view>
+        </picker>
+      </view>
+    </view> -->
+  </view>
+  <!-- 下拉框 -->
+  <!-- <view class='list-msg2' bindtap='bindShowMsg'>
+        <text>{{tihuoWay}}</text>
+        <image style='height:20rpx;width:20rpx;' src='../../../../image/triangle-down@2x.png'></image>
+      </view> -->
+  <!-- 下拉需要显示的列表 -->
+  <!-- <scroll-view scroll-y="true" style="height: 200rpx;">
+        <view class="select_box" wx:if="{{select}}" wx:for="{{selectSource}}" wx:for-index wx:for-item>
+            <input style='display:none' value="{{item.name}}" name="{{item.name}}"></input>
+            <view class="select_one" bindtap="mySelect" data-name="{{item.label}}" data-id="{{item.value}}" name="{{item.label}}">
+            {{item.label}}
+            </view>
+        </view>
+      </scroll-view> -->
+
+  <view class="list-con">
+    <view class="therig">株行距：</view>
+    <view class="trueor">{{lists.linespace}}米</view>
+  </view>
+  <view class="list-con">
+    <view class="therig">树龄：</view>
+    <view class="trueor">{{lists.treeage}}年</view>
+  </view>
+  <view class="list-con wei">
+    <view class="therig">详细位置：</view>
+    <view class="trueor">{{lists.massifloction}}</view>
+  </view>
+
+  <!-- 添加轮次 -->
+  <view class="{{showAdd ? 'round_show' : 'round_hide'}}">
+    <view class='addround'>
+      <view class="roundTitle">添加种植轮次</view>
+      <view class="roundMain">
+        <view>关键词</view>
+        <input></input>
+      </view>
+      <view class="roundBtn">
+        <view class="roundNo" catchtap='roundNo'>取消</view>
+        <view class="roundYes" catchtap='roundYes'>确定</view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- </form> -->

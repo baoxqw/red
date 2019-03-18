@@ -1,0 +1,57 @@
+<!--page/component/add/add.wxml-->
+<!-- //遮罩层 -->
+<block wx:if="{{mask}}">
+  <view class="mask"></view>
+</block>
+<form catchsubmit="formSubmit" catchreset="formReset">
+  <!-- <view class="addOrder">生成订单</view> -->
+  <view class="topall">
+    <view class='main-title'>订单名称：</view>
+    <input class="inputName" value="{{orderName}}" name="num" placeholder='请输入订单名称' placeholder-style='color:rgb(0,0,0);font-size:30rpx;'></input>
+  </view>
+  <!-- 地区选择 -->
+  <view class="area topall">
+    <view class='area-title main-title'>地区选择：</view>
+    <view class="item" catchtap='goshow'>
+      <text class="item-content">{{province}} {{city}} {{area}}</text>
+      <!-- <text class="item-content">{{reprovince}} {{recity}} {{rearea}}</text> -->
+      <!-- <image class="addressPic" src="../../image/arrowright.png"></image> -->
+    </view>
+    <view class="{{show == true?'showAddress':'noshow'}}">
+      <view class="btn">
+        <view class="nobtn" catchtap='n'>取消</view>
+        <view class="yesbtn" catchtap='y'>确定</view>
+      </view>
+      <picker-view indicator-style="height: 50px;" style="width: 100%;height: 150px;text-align: center" value="{{prIndex}}" bindchange="changeProvince2">
+        <picker-view-column>
+          <view wx:for="{{placeArray}}" wx:key="name" style="line-height: 50px">{{item.label}}</view>
+        </picker-view-column>
+      </picker-view>
+      <picker-view indicator-style="height: 50px;" style="width: 100%;height: 150px;text-align: center" value="{{crIndex}}" bindchange="changeCity2">
+        <picker-view-column>
+          <view wx:for="{{placeArray[pIndex].children}}" wx:key="name" style="line-height: 50px">{{item.label}}</view>
+        </picker-view-column>
+      </picker-view>
+      <picker-view indicator-style="height: 50px;" style="width: 100%;height: 150px;text-align: center" value="{{arIndex}}" bindchange="changeArea2">
+        <picker-view-column>
+          <view wx:for="{{placeArray[pIndex].children[cIndex].children}}" wx:key="*this" style="line-height: 50px">{{item.label}}</view>
+        </picker-view-column>
+      </picker-view>
+    </view>
+  </view>
+  <view class="topall">
+    <view class='main-title'>详细地址：</view>
+    <input class="inputName inputAdress" value="{{address}}" name="address" placeholder='请输入详细地址' placeholder-style='color:rgb(0,0,0);font-size:30rpx;'></input>
+  </view>
+
+  <view class="topall topdesc">
+    <view class='main-title'>备注：</view>
+    <text style='display:none'>{{currentInput}}</text>
+    <textarea class="weui-textarea" placeholder="请输入文本" value="{{currentInput}}" bindinput="getInput" placeholder-style='color:rgb(0,0,0);font-size:25rpx;' maxlength="1000" />
+  </view>
+
+
+  <view class="{{show == true?'downsub':'sub'}}">
+    <button formType="submit" class="ti"> 提交 </button>
+  </view>
+</form>

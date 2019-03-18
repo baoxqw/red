@@ -1,0 +1,92 @@
+<view class="search">
+  <view class="sea">
+    <image src="../../../../image/search@2x.png"></image>
+    <input placeholder='请输入订单名称' placeholder-style='color:rgb(174,174,174)' name="searchValue" bindinput="userNameInput"></input>
+    <block wx:if="{{add==true}}">
+      <view class="addOrder" catchtap='fathadd'>
+        生成订单
+        <!-- <image src="../../../../image/add@2x.png"></image> -->
+      </view>
+    </block>
+  </view>
+</view>
+<view class="list {{index == 0 ? 'first' : ''}}" wx:for="{{lists}}" wx:for-item wx:for-index>
+  <view class="list-infor">
+    <view class="list-con">
+      <view class="theor"> 订单名称：</view>
+      <view class="thetrueor">{{item.name}}</view>
+    </view>
+    <view class="list-con">
+      <view class="or">备注：</view>
+      <view class="trueor">{{item.description}}</view>
+    </view>
+    <view class="list-con">
+      <view class="or">订单状态：</view>
+      <view class="trueor">{{item.state}}</view>
+    </view>
+  </view>
+  <view class="sk">
+    <block wx:if="{{item.orderstate==0?true:false}}">
+      <view class="sk-cha" bindtap='sunOrder' data-data="{{item}}">提交订单</view>
+    </block>
+    <view bindtap="searOrderChild" data-data="{{item}}" class="sk-ding">查询子订单</view>
+  </view>
+  <view class="list-btn">
+    <block wx:if="{{item.orderstate==0?true:false}}">
+      <view class="list-up" bindtap="update" bindtap="updateTo" data-data="{{item}}">修改</view>
+    </block>
+    <block wx:if="{{item.orderstate==0?true:false}}">
+      <view class="list-del" bindtap="onChangeShowState" data-data="{{item.id}}">删除</view>
+    </block>
+  </view>
+</view>
+
+<view>
+
+  <!-- <view class="list-btn">
+    <!-- <block wx:if="{{add==true}}">
+      <view class="list-add" bindtap="onChangeShowRoundState">添加轮次</view>
+    </block> -->
+  <!-- <view>
+      <block wx:if="{{item.orderstate==0?true:false}}">
+        <view class="sub-order" bindtap="sunOrder" data-data="{{item.id}}">提交订单</view>
+      </block>
+    </view>
+    <view bindtap="navigatorTo" data-data="{{item}}">
+      <block>
+        <view class="sea-order" bindtap="searOrderChild" data-data="{{item}}">查询子订单</view>
+      </block>
+    </view>
+    <block wx:if="{{item.orderstate==0?true:false}}">
+      <view class="update-order" bindtap="update" bindtap="updateTo" data-data="{{item}}">修改</view>
+    </block>
+    <block wx:if="{{item.orderstate==0?true:false}}">
+      <view class="del-order" bindtap="onChangeShowState" data-data="{{item.id}}">删除</view>
+    </block>
+
+  </view> -->
+  <!-- 删除信息 -->
+  <view class="{{showView ? 'del-wrap_show' : 'del-wrap_hide'}}">
+    <view class='del'>
+      <view class="delate">确认删除该信息?</view>
+      <view class="no" catchtap='no'>取消</view>
+      <view class="yes" catchtap='yes'>确认</view>
+    </view>
+  </view>
+</view>
+
+<!-- 添加轮次 -->
+<view class="{{showAdd ? 'round_show' : 'round_hide'}}">
+  <view class='addround'>
+    <view class="roundTitle">添加种植轮次</view>
+    <view class="roundMain">
+      <view>关键词</view>
+      <input></input>
+    </view>
+    <view class="roundBtn">
+      <view class="roundNo" catchtap='roundNo'>取消</view>
+      <view class="roundYes" catchtap='roundYes'>确定</view>
+    </view>
+  </view>
+</view>
+<view class="bottom-line" wx:if="{{bottomLineShow==true}}">——我是有底线的——</view>

@@ -1,0 +1,310 @@
+<!-- <navigator url="../../logs/logs">
+  <view class="backed">返回登录页</view>
+</navigator> -->
+
+<view class="con">
+  <block wx:if="{{land==true}}">
+    <navigator url="../land/list/list">
+      <view class='squre land'>
+        <image class="landimg" src="../../../image/bg1@2x.jpg"></image>
+        <view class="content">
+          <image src="../../../image/land@2x.png" class="index-img"></image>
+          <view class="infor">地块管理</view>
+        </view>
+      </view>
+    </navigator>
+  </block>
+
+  <block wx:if="{{agricultural==true}}">
+    <navigator url="../agricultural/list/list">
+      <view class='squre land'>
+        <image class="landimg" src="../../../image/bg2@2x.jpg"></image>
+        <view class="content">
+          <image src="../../../image/agri@2x.png" class="index-img"></image>
+          <view class="infor">农资购买记录管理</view>
+        </view>
+      </view>
+    </navigator>
+  </block>
+
+  <block wx:if="{{SellerOrder==true}}">
+    <navigator url="../trade/list/list">
+      <view class='squre land'>
+        <image class="landimg" src="../../../image/bg3@2x.jpg"></image>
+        <view class="content">
+          <image src="../../../image/agri@2x.png" class="index-img"></image>
+          <view class="infor">销售订单管理</view>
+        </view>
+      </view>
+    </navigator>
+  </block>
+
+  <block wx:if="{{farm==true}}">
+    <navigator url="../farm/list/list">
+      <view class='squre land'>
+        <image class="landimg" src="../../../image/bg4@2x.jpg"></image>
+        <view class="content">
+          <image src="../../../image/farm@2x.png" class="index-img"></image>
+          <view class="infor">农事记录管理</view>
+        </view>
+      </view>
+    </navigator>
+  </block>
+
+  <block wx:if="{{pick==true}}">
+    <navigator url="../pick/list/list">
+      <view class='squre land'>
+        <image class="landimg" src="../../../image/bg5@2x.jpg"></image>
+        <view class="content">
+          <image src="../../../image/doc@2x.png" class="index-img"></image>
+          <view class="infor">采摘信息管理</view>
+        </view>
+      </view>
+    </navigator>
+  </block>
+
+  <block wx:if="{{stock==true}}">
+    <navigator url="../stock/list/list">
+      <view class='squre land'>
+        <image class="landimg" src="../../../image/bg6@2x.jpg"></image>
+
+        <view class="content">
+          <image src="../../../image/stock@2x.png" class="index-img"></image>
+          <view class="infor">库存展示管理</view>
+        </view>
+
+      </view>
+    </navigator>
+  </block>
+
+  <block wx:if="{{work==true}}">
+    <navigator url="../work/list/list">
+      <view class='squre land'>
+        <image class="landimg" src="../../../image/bg1@2x.jpg"></image>
+
+        <view class="content">
+          <image src="../../../image/work@2x.png" class="index-img"></image>
+          <view class="infor">加工批次管理</view>
+        </view>
+
+      </view>
+    </navigator>
+  </block>
+
+  <block wx:if="{{workChild==true}}">
+    <navigator url="../workChild/list/list">
+      <view class='squre land'>
+        <image class="landimg" src="../../../image/bg2@2x.jpg"></image>
+        <view class="content">
+          <image src="../../../image/work@2x.png" class="index-img"></image>
+          <view class="infor">加工子批次管理</view>
+        </view>
+      </view>
+    </navigator>
+  </block>
+
+  <block wx:if="{{product==true}}">
+    <navigator url="../product/list/list">
+      <view class='squre land'>
+        <image class="landimg" src="../../../image/bg3@2x.jpg"></image>
+        <view class="content">
+          <image src="../../../image/pro@2x.png" class="index-img"></image>
+          <view class="infor">产品信息管理</view>
+        </view>
+      </view>
+    </navigator>
+  </block>
+
+  <!-- background:url(../../../image/bg4@2x.jpg) no-repeat center/100% 100% -->
+  <block wx:if="{{grow==true}}">
+    <navigator url="../grow/list/list">
+      <view class='squre land'>
+        <image class="landimg" src="../../../image/bg4@2x.jpg"></image>
+        <view class="content">
+          <image src="../../../image/grow@2x.png" class="index-img"></image>
+          <view class="infor">生长记录管理</view>
+        </view>
+      </view>
+    </navigator>
+  </block>
+
+  <block wx:if="{{order==true}}">
+    <navigator url="../order/list/list">
+      <view class='squre land'>
+        <image class="landimg" src="../../../image/bg5@2x.jpg"></image>
+        <view class="content">
+          <image src="../../../image/order@2x.png" class="index-img"></image>
+          <view class="infor">订单管理</view>
+        </view>
+      </view>
+    </navigator>
+  </block>
+
+  <block wx:if="{{orderChild==true}}">
+    <navigator url="../orderChild/list/list">
+      <view class='squre land'>
+        <image class="landimg" src="../../../image/bg6@2x.jpg"></image>
+
+        <view class="content">
+          <image src="../../../image/order@2x.png" class="index-img"></image>
+          <view class="infor">子订单管理</view>
+        </view>
+
+      </view>
+    </navigator>
+  </block>
+  <!-- <block wx:if="{{packaged==true}}">
+  <view class='squre' style="background:url(../../../image/bg6@2x.png) no-repeat center/100% 100%" catchtap="golist">
+    <navigator url="../package/list/list">
+      <image src="../../../image/pack@2x.png" class="index-img"></image>
+      <view class="infor">包装信息管理 </view>
+    </navigator>
+  </view>
+</block> -->
+  <block wx:if="{{inform==true}}">
+    <navigator url="../inform/list/list">
+      <view class='squre land'>
+        <image class="landimg" src="../../../image/bg1@2x.jpg"></image>
+        <view class="content">
+          <image src="../../../image/inform@2x.png" class="index-img"></image>
+          <view class="infor">通知公告管理</view>
+        </view>
+      </view>
+    </navigator>
+  </block>
+
+  <block wx:if="{{sales==true}}">
+    <navigator url="../sales/list/list">
+      <view class='squre land'>
+        <image class="landimg" src="../../../image/bg2@2x.jpg"></image>
+        <view class="content">
+          <image src="../../../image/sales@2x.png" class="index-img"></image>
+          <view class="infor">销售回执信息</view>
+        </view>
+      </view>
+    </navigator>
+  </block>
+
+  <block wx:if="{{logistics==true}}">
+    <navigator url="../logistics/list/list">
+      <view class='squre land'>
+        <image class="landimg" src="../../../image/bg3@2x.jpg"></image>
+        <view class="content">
+          <image src="../../../image/logistics@2x.png" class="index-img"></image>
+          <view class="infor">物流信息 </view>
+        </view>
+      </view>
+    </navigator>
+  </block>
+
+  <block wx:if="{{authen==true}}">
+    <navigator url="../authen/list/list">
+      <view class='squre land'>
+        <image class="landimg" src="../../../image/bg4@2x.jpg"></image>
+        <view class="content">
+          <image src="../../../image/authen@2x.png" class="index-img"></image>
+          <view class="infor">认证信息</view>
+        </view>
+      </view>
+    </navigator>
+  </block>
+
+  <block wx:if="{{accountChild==true}}">
+    <navigator url="../accountChild/list/list">
+      <view class='squre land'>
+        <image class="landimg" src="../../../image/bg5@2x.jpg"></image>
+        <view class="content">
+          <image src="../../../image/account@2x.png" class="index-img"></image>
+          <view class="infor">子账户管理</view>
+        </view>
+      </view>
+    </navigator>
+  </block>
+
+  <block wx:if="{{goout==true}}">
+    <navigator url="../goout/list/list">
+      <view class='squre land'>
+        <image class="landimg" src="../../../image/bg6@2x.jpg"></image>
+        <view class="content">
+          <image src="../../../image/order@2x.png" class="index-img"></image>
+          <view class="infor">出入库记录</view>
+        </view>
+      </view>
+    </navigator>
+  </block>
+
+  <!-- 种植公司认证 -->
+  <block wx:if="{{farmauthen==true}}">
+    <navigator url="../farmauthen/list/list">
+      <view class='squre land'>
+        <image class="landimg" src="../../../image/bg1@2x.jpg"></image>
+        <view class="content">
+          <image src="../../../image/order@2x.png" class="index-img"></image>
+          <view class="infor">企业认证</view>
+        </view>
+      </view>
+    </navigator>
+  </block>
+
+  <!-- 销售商认证 -->
+  <block wx:if="{{sellerauthen==true}}">
+    <navigator url="../sellerauthen/list/list">
+      <view class='squre land'>
+        <image class="landimg" src="../../../image/bg2@2x.jpg"></image>
+        <view class="content">
+          <image src="../../../image/order@2x.png" class="index-img"></image>
+          <view class="infor">销售商认证</view>
+        </view>
+      </view>
+    </navigator>
+  </block>
+  <!-- 个体认证 -->
+  <block wx:if="{{perauthen==true}}">
+    <navigator url="../perauthen/list/list">
+      <view class='squre land'>
+        <image class="landimg" src="../../../image/bg3@2x.jpg"></image>
+        <view class="content">
+          <image src="../../../image/order@2x.png" class="index-img"></image>
+          <view class="infor">个体认证</view>
+        </view>
+      </view>
+    </navigator>
+  </block>
+  <!-- 注册 -->
+  <!-- 种植公司认证 -->
+  <block wx:if="{{farmauthenreg==true}}">
+    <navigator url="../farmauthenreg/list/list">
+      <view class='squre land'>
+        <image class="landimg" src="../../../image/bg4@2x.jpg"></image>
+        <view class="content">
+          <image src="../../../image/order@2x.png" class="index-img"></image>
+          <view class="infor">企业认证</view>
+        </view>
+      </view>
+    </navigator>
+  </block>
+  <!-- 销售商认证 -->
+  <block wx:if="{{sellerauthenreg==true}}">
+    <navigator url="../sellerauthenreg/list/list">
+      <view class='squre land'>
+        <image class="landimg" src="../../../image/bg5@2x.jpg"></image>
+        <view class="content">
+          <image src="../../../image/agri@2x.png" class="index-img"></image>
+          <view class="infor">销售商认证</view>
+        </view>
+      </view>
+    </navigator>
+  </block>
+  <!-- 个体认证 -->
+  <block wx:if="{{perauthenreg==true}}">
+    <navigator url="../perauthenreg/list/list">
+      <view class='squre land'>
+        <image class="landimg" src="../../../image/bg6@2x.jpg"></image>
+        <view class="content">
+          <image src="../../../image/account@2x.png" class="index-img"></image>
+          <view class="infor">个体认证</view>
+        </view>
+      </view>
+    </navigator>
+  </block>
+</view>

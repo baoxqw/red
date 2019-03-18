@@ -1,0 +1,75 @@
+<!--page/component/add/add.wxml-->
+<form catchsubmit="formSubmit" catchreset="formReset">
+  <view class="add-top">
+    <view class="top-fir" wx:for="{{addSource}}" wx:for-index wx:for-item>
+      <view class="add-name">{{item.display}}</view>
+      <input value="{{infos[item.name]}}" name="{{item.name}}" placeholder='请输入{{item.placeholder}}' placeholder-style='color:rgb(0,0,0);font-size:30rpx;'></input>
+    </view>
+  </view>
+  <view class="add-main">
+    <!-- 作物名称 -->
+    <view class='main-squre'>
+      <view class='main-title'>作物名称</view>
+      <!-- 下拉框 -->
+      <view class='list-msg2' bindtap='bindShowMsg'>
+        <text>{{tihuoWay}}</text>
+        <image style='height:20rpx;width:20rpx;' src='../../../../image/triangle-down@2x.png'></image>
+      </view>
+      
+      <!-- 下拉需要显示的列表 -->
+      <view class="select_box" wx:if="{{select}}" wx:for="{{selectSource}}" wx:for-index wx:for-item>
+        <input style='display:none' value="{{item.name}}" name="{{item.name}}"></input>
+        {{item.name}}
+        <view class="select_one" bindtap="mySelect" data-name="{{item.value}}" name="{{item.name}}">{{item.value}}</view>
+        <!-- <view class="select_one" bindtap="mySelect" data-name="农作物2">农作物2</view>
+        <view class="select_one" bindtap="mySelect" data-name="农作物3">农作物3</view> -->
+      </view>
+    </view>
+    <!-- 地块图片扩展 -->
+    <view class="squre-pic">
+      <view class='main-title'>地块图片扩展</view>
+      <!-- 上传图片 -->
+      <view class="box">
+        <!-- <input style="display:none;" name="imgPath" value="{{evalListPaths}}"></input> -->
+        <view class="educt_hasupload_pic" wx:for="{{evalList[0].tempFilePaths}}"  wx:key="index">
+          <image src="{{item.pic}}" class="upload"></image>
+          <image src="../../../../image/clean@2x.png" bindtap='clearImg' data-index="{{index}}" class="deltel"></image>
+        </view>
+        <view class="educt_upload_add" bindtap="joinPicture" data-index="{{0}}">
+          <image src="../../../../image/plus.png"></image>
+        </view>
+      </view>
+      <!--  -->
+    </view>
+    <!-- 日期选择 -->
+    <view class="timer">
+      <view class='timer-title'>日期选择</view>
+        <picker mode="date" value="{{date}}" start="1978-01-01" end="2017-1-23" bindchange="bindDateChange">  
+        <view class="picker">  
+            日期: {{dates}}  
+        </view>  
+  </picker>
+    </view>
+    <!-- 地区选择 -->
+    <view class="area">
+      <view class='area-title'>地区选择</view>
+      <view class="publish-right left ">
+        <picker mode="region" bindchange="bindRegionChange" custom-item="{{customItem}}"  name="map" value="{{region}}"  >
+          <view class="picker left">
+            <text>{{region[0]}}</text>
+          </view>
+          <view class="picker left">
+            <text>{{region[1]}}</text>
+          </view>
+          <view class="picker left">
+            <text>{{region[2]}}</text>
+          </view>
+        </picker>
+      </view>
+    </view>
+  </view>
+  <view class="sub">
+    <button formType="submit"> 提交 </button>
+  </view>
+</form>
+

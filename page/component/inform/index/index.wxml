@@ -1,0 +1,85 @@
+<!--page/component/index.wxml-->
+<!-- <view class='squre' wx:for="{{items}}" wx:for-item wx:for-index style="background:url({{item.bg}}) no-repeat center/100% 100%" catchtap="golist">
+  <navigator>
+    <image src="{{item.url}}" class="index-img"></image>
+    <view class="infor">{{item.title}}</view>
+  </navigator>
+</view> -->
+<view class='squre' style="background:url(../../../image/bg4@3x.png) no-repeat center/100% 100%" catchtap="golist">
+  <navigator url="../land/list/list">
+    <image src="../../../image/pro@2x.png" class="index-img"></image>
+    <view class="infor">地块管理</view>
+  </navigator>
+</view>
+<view class='squre' style="background:url(../../../image/bg2@3x.png) no-repeat center/100% 100%" catchtap="golist">
+  <navigator url="../agricultural/list/list">
+    <image src="../../../image/pro@2x.png" class="index-img"></image>
+    <view class="infor">农资购买记录管理</view>
+  </navigator>
+</view>
+<view class='squre' style="background:url(../../../image/bg3@2x.png) no-repeat center/100% 100%" catchtap="golist">
+  <navigator url="../farm/list/list">
+    <image src="../../../image/pro@2x.png" class="index-img"></image>
+    <view class="infor">农事记录管理</view>
+  </navigator>
+</view>
+<view class='squre' style="background:url(../../../image/bg1@2x.png) no-repeat center/100% 100%" catchtap="golist">
+  <navigator>
+    <image src="../../../image/pro@2x.png" class="index-img"></image>
+    <view class="infor">采摘信息管理</view>
+  </navigator>
+</view>
+<view class='squre' style="background:url(../../../image/bg6@2x.png) no-repeat center/100% 100%" catchtap="golist">
+  <navigator>
+    <image src="../../../image/pro@2x.png" class="index-img"></image>
+    <view class="infor">库存展示管理</view>
+  </navigator>
+</view>
+<view class='squre' style="background:url(../../../image/bg5@3x.png) no-repeat center/100% 100%" catchtap="golist">
+  <navigator>
+    <image src="../../../image/pro@2x.png" class="index-img"></image>
+    <view class="infor">加工批次管理</view>
+  </navigator>
+</view>
+<view class='squre' style="background:url(../../../image/bg6@3x.png) no-repeat center/100% 100%" catchtap="golist">
+  <navigator>
+    <image src="../../../image/pro@2x.png" class="index-img"></image>
+    <view class="infor">加工子批次管理</view>
+  </navigator>
+</view>
+<view class='squre' style="background:url(../../../image/bg2@2x.png) no-repeat center/100% 100%" catchtap="golist">
+  <navigator>
+    <image src="../../../image/pro@2x.png" class="index-img"></image>
+    <view class="infor">产品信息管理</view>
+  </navigator>
+</view>
+<view class='squre' style="background:url(../../../image/bg4@3x.png) no-repeat center/100% 100%" catchtap="golist">
+  <navigator>
+    <image src="../../../image/pro@2x.png" class="index-img"></image>
+    <view class="infor">加工子批次管理</view>
+  </navigator>
+</view>
+<view class='squre' style="background:url(../../../image/bg4@3x.png) no-repeat center/100% 100%" catchtap="golist">
+  <navigator>
+    <image src="../../../image/pro@2x.png" class="index-img"></image>
+    <view class="infor">产品信息管理</view>
+  </navigator>
+</view>
+<view class='squre' style="background:url(../../../image/bg4@3x.png) no-repeat center/100% 100%" catchtap="golist">
+  <navigator>
+    <image src="../../../image/pro@2x.png" class="index-img"></image>
+    <view class="infor">生长记录管理</view>
+  </navigator>
+</view>
+<view class='squre' style="background:url(../../../image/bg4@3x.png) no-repeat center/100% 100%" catchtap="golist">
+  <navigator>
+    <image src="../../../image/pro@2x.png" class="index-img"></image>
+    <view class="infor">订单管理 </view>
+  </navigator>
+</view>
+<view class='squre' style="background:url(../../../image/bg4@3x.png) no-repeat center/100% 100%" catchtap="golist">
+  <navigator>
+    <image src="../../../image/pro@2x.png" class="index-img"></image>
+    <view class="infor">子订单管理</view>
+  </navigator>
+</view>

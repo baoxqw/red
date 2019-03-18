@@ -1,0 +1,15 @@
+<form bindsubmit='formSubmit'>
+<view class="phone_one" bindtap="clickPerson">点击</view>
+  <view class="text">
+    <view class="person_box">
+      <view class="phone_select" hidden="{{selectPerson}}">
+          <block wx:for='{{stores}}' wx:for-item='store' wx:key=''>
+            <view class="select_one" bindtap="mySelect"  data-value='{{store.id}}'data-me="{{store.store_name}}">{{store.store_name}}</view>
+          </block>
+          {{store.store_name}}
+      </view>
+    </view>
+  </view> 
+  <input class="input" type="text" name='id'  value='{{store.store_name}}' />
+<button class='btn input' style='background-color:#022b46;' type="primary" form-type="submit">预约</button>
+</form>

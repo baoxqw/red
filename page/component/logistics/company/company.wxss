@@ -1,0 +1,422 @@
+/* page/component/add/add.wxss */
+
+.top-fir {
+  width: 100%;
+  height: 98rpx;
+  font-size: 30rpx;
+  box-sizing: border-box;
+  padding: 22rpx 0 22rpx 20rpx;
+  /* border-bottom: 1px solid rgb(240, 240, 240); */
+  float: left;
+}
+
+.top-fir>view {
+  display: inline-block;
+  float: left;
+  height: 50rpx;
+  margin-right: 20rpx;
+  line-height: 50rpx;
+  color: rgb(25, 139, 254);
+  font-size: 25rpx;
+}
+
+.top-fir>input {
+  display: inline-block;
+  float: left;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+
+.add-main {
+  font-size: 24rpx;
+  color: rgb(25, 139, 254);
+}
+
+.main-title {
+  height: 72rpx;
+  line-height: 72rpx;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  color: rgb(25, 139, 254);
+  font-size: 25rpx;
+}
+
+.main-squre {
+  height: 150rpx;
+  border-bottom: 1px solid rgb(240, 240, 240);
+  position: relative;
+}
+
+.inputName {
+  margin-right: 20rpx;
+  border: 1px solid rgb(240, 240, 240);
+  border-radius: 10rpx;
+  padding-left: 10rpx;
+  color: #000;
+  width: 542rpx;
+}
+
+.inputWeight {
+  width: 212rpx;
+  display: inline-block;
+}
+
+/* 下拉框 */
+
+.list-msg2 {
+  color: rgb(138, 138, 138);
+  font-size: 28rpx;
+  height: 60rpx;
+}
+
+.list-msg2 text {
+  margin-left: 20rpx;
+  float: left;
+}
+
+.list-msg2 image {
+  margin-top: 10rpx;
+  margin-right: 20rpx;
+  float: right;
+}
+
+.select_box {
+  position: relative;
+  background-color: #fbf9fe;
+  padding: 0 10rpx;
+  line-height: 50rpx;
+  color: black;
+  left: 2%;
+  width: 93%;
+  z-index: 666;
+  overflow: hidden;
+  animation: myfirst 0.5s;
+}
+
+@keyframes myfirst {
+  from {
+    height: 0rpx;
+  }
+
+  to {
+    height: 60rpx;
+  }
+}
+
+.select_one {
+  color: rgb(138, 138, 138);
+  height: 60rpx;
+  line-height: 60rpx;
+  border-bottom: 1px solid #ccc;
+  font-size: 27rpx;
+}
+
+/* 上传图片 */
+
+.box {
+  position: relative;
+}
+
+.educt_hasupload_pic {
+  width: 200rpx;
+  height: 200rpx;
+  display: inline-block;
+  position: relative;
+}
+
+.autoComplete imgage {
+  width: 100%;
+  height: 100%;
+}
+
+.upload {
+  width: 150rpx;
+  height: 150rpx;
+  margin: 20rpx;
+}
+
+.deltel {
+  position: absolute;
+  right: 4px;
+  top: 0;
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.educt_upload_add {
+  display: inline-block;
+  width: 150rpx;
+  height: 150rpx;
+}
+
+.educt_upload_add image {
+  width: 100%;
+  height: 100%;
+}
+
+.squre-pic .weui-cells {
+  position: relative;
+  margin-top: 0rpx;
+  background-color: #fbf9fe;
+  line-height: 1.41176471;
+  font-size: 17px;
+}
+
+/* 视频 */
+
+.view_r {
+  width: 100%;
+}
+
+video {
+  width: 100%;
+  height: 300rpx;
+}
+
+.hide {
+  display: none;
+}
+
+/* 日期选择 */
+
+.timer-title {
+  font-size: 25rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  margin-left: 20rpx;
+  color: rgb(25, 139, 254);
+}
+
+.timer picker {
+  width: 62%;
+  margin: 0 auto;
+  border: 1px solid #e0e4e7;
+  border-radius: 20rpx;
+}
+
+.timer .picker {
+  font-size: 30rpx;
+  border: 0;
+  width: 88%!important;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-left: 0!important;
+  box-sizing: border-box;
+  padding-right: 60rpx;
+  background: url(https://lg-3jb3svnw-1257044323.cos.ap-shanghai.myqcloud.com/publish-solid-bottom.png) no-repeat 95% center;
+  background-size: 30rpx 30rpx;
+}
+
+/* 地区选择 */
+
+.area-title {
+  height: 72rpx;
+  line-height: 72rpx;
+  margin-left: 20rpx;
+  font-size: 30rpx;
+  color: rgb(25, 139, 254);
+}
+
+.publish-right {
+  box-sizing: border-box;
+  text-align: center;
+}
+
+picker {
+  width: 100%;
+  margin-top: 12rpx;
+  overflow: hidden;
+  color: #000;
+  font-size: 25rpx;
+}
+
+.picker {
+  width: 170rpx;
+  overflow: hidden;
+  border: 1rpx solid #ededed;
+  padding: 0 20rpx;
+  border-radius: 10rpx;
+  margin: 5rpx 10rpx 0 0;
+  /* background:linear-gradient(#ecedef,#edf1f2,#e0e4e7); */
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+.picker text {
+  box-sizing: border-box;
+  line-height: 40rpx;
+  width: 100%x;
+  display: block;
+  height: 42rpx;
+  overflow: hidden;
+  padding-right: 40rpx;
+  background: url(https://lg-3jb3svnw-1257044323.cos.ap-shanghai.myqcloud.com/publish-solid-bottom.png) no-repeat right center;
+  background-size: 35rpx 35rpx;
+}
+
+/* 提交 */
+
+.sub {
+  display: block;
+  width: 80%;
+  margin: 337rpx auto;
+  font-size: 25rpx;
+}
+
+.nosub {
+  display: none;
+}
+
+.sub .create {
+  width: 200rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  display: inline-block;
+  background: rgb(25, 139, 254);
+  color: #fff;
+  border-radius: 50rpx;
+  font-size: 28rpx;
+}
+
+.sub .back {
+  border: 1px solid #000;
+  width: 300rpx;
+  height: 70rpx;
+  background: #fff;
+  line-height: 70rpx;
+  display: inline-block;
+  border-radius: 50rpx;
+  font-size: 28rpx;
+  margin-left: 70rpx;
+}
+
+/* 文本域 */
+
+.topdesc {
+  height: 300rpx;
+  width: 100%;
+}
+
+.topdesc .weui-textarea {
+  text-indent: 20rpx;
+  box-sizing: border-box;
+  padding-left: 20rpx;
+  height: 72%;
+  font-size: 25rpx;
+  overflow-y: hidden;
+  word-break: break-all;
+  word-wrap: break-word;
+  width: 88%;
+  margin: 0 auto;
+  border-radius: 18rpx;
+  border: 1px solid rgb(138, 138, 138);
+}
+
+.bei {
+  font-size: 25rpx;
+  color: rgb(25, 139, 254);
+  height: 70rpx;
+  line-height: 70rpx;
+  margin-left: 20rpx;
+}
+
+/* 三级 */
+
+/* page/test/test.wxss */
+
+.item {
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  box-sizing: border-box;
+  padding-left: 20rpx;
+}
+
+.item-content {
+  font-size: 30rpx;
+  margin-right: 50rpx;
+}
+
+.item {
+  background: url(https://lg-3jb3svnw-1257044323.cos.ap-shanghai.myqcloud.com/publish-solid-bottom.png) no-repeat 95% center;
+  background-size: 35rpx 35rpx;
+  float: left;
+  border: 1px solid rgb(240, 240, 240);
+  width: 415rpx;
+  margin-left: 21rpx;
+  height: 59rpx;
+  line-height: 59rpx;
+  border-radius: 10rpx;
+}
+
+.showAddress {
+  display: flex;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 30rpx;
+}
+
+.noshow {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.showAddress image {
+  z-index: 666;
+  height: 50rpx;
+  width: 50rpx;
+  position: absolute;
+  bottom: 240rpx;
+  right: 5rpx;
+}
+
+.showAddress .btn {
+  border-top: 1px solid #fff;
+  position: absolute;
+  bottom: 300rpx;
+  left: 0;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  box-sizing: border-box;
+  padding: 0 50rpx;
+  font-size: 30rpx;
+  float: left;
+}
+
+.nobtn {
+  float: left;
+}
+
+.yesbtn {
+  float: right;
+  color: rgb(25, 139, 254);
+}
+
+.pick {
+  width: 100%;
+  height: 300rpx;
+  float: left;
+}
+
+.cl {
+  width: 220rpx;
+  float: left;
+}
+
+.inputName {
+  width: 400rpx;
+  float: left;
+  font-size: 30rpx;
+}
+
+.area {
+  width: 100%;
+  heigth: 98rpx;
+  box-sizing: border-box;
+  padding-top: 20rpx;
+  float: left;
+}

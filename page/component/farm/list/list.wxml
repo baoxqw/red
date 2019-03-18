@@ -1,0 +1,78 @@
+<view class="search">
+  <view class="sea">
+    <image src="../../../../image/search@2x.png"></image>
+    <input class="{{add == true?'short':'long'}}" placeholder='请输入地块名称' placeholder-style='color:rgb(174,174,174)' name="searchValue" bindinput="userNameInput"></input>
+    <block wx:if="{{add==true}}">
+      <view class="add addOrder" catchtap='add'>
+        添加农事记录
+      </view>
+    </block>
+  </view>
+</view>
+<view class="list {{index == 0 ? 'first' : ''}}" wx:for="{{lists}}" wx:for-item wx:for-index>
+  <view class="list-infor">
+    <view class="list-tit">
+      <view class="theor">地块名称：</view>
+      <view class="thetrueor">{{item.massifName}}</view>
+    </view>
+    <view class="list-con">
+      <view class="or">管理类型：</view>
+      <view class="trueor">{{item.manageName}}</view>
+    </view>
+    <view class="list-con">
+      <view class="or">农资名称：</view>
+      <view class="trueor">{{item.pesticidesName}}</view>
+    </view>
+    <view class="list-con">
+      <view class="or">农资消耗量：</view>
+      <view class="trueor">{{item.consume}}</view>
+    </view>
+    <view class="list-con">
+      <view class="or">实施时间：</view>
+      <view class="trueor">{{item.operationtime}}</view>
+    </view>
+    <view class="list-con">
+      <view class="or">操作人：</view>
+      <view class="trueor">{{item.operator}}</view>
+    </view>
+
+  </view>
+  <view class="list-btn">
+    <!-- <block wx:if="{{add==true}}">
+      <view class="list-add" bindtap="onChangeShowRoundState">添加轮次</view>
+    </block> -->
+    <view bindtap="navigatorTo" data-data="{{item}}">
+      <block wx:if="{{update==true}}">
+        <view class="list-up">编辑</view>
+      </block>
+    </view>
+
+    <block wx:if="{{deleted==true}}">
+      <view class="list-del" bindtap="onChangeShowState" data-data="{{item.id}}">删除</view>
+    </block>
+    <!-- 删除信息 -->
+    <view class="{{showView ? 'del-wrap_show' : 'del-wrap_hide'}}">
+      <view class='del'>
+        <view class="delate">确认删除该信息?</view>
+        <view class="no" catchtap='no'>取消</view>
+        <view class="yes" catchtap='yes'>确认</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 添加轮次 -->
+<view class="{{showAdd ? 'round_show' : 'round_hide'}}">
+  <view class='addround'>
+    <view class="roundTitle">添加种植轮次</view>
+    <view class="roundMain">
+      <view>关键词</view>
+      <input></input>
+    </view>
+    <view class="roundBtn">
+      <view class="roundNo" catchtap='roundNo'>取消</view>
+      <view class="roundYes" catchtap='roundYes'>确定</view>
+    </view>
+  </view>
+</view>
+<view class="bottom-line" wx:if="{{bottomLineShow==true}}">——我是有底线的——</view>

@@ -1,0 +1,22 @@
+/* page/component/index.wxss */
+.squre{
+  width:50%;
+  height:calc(100% / 3 );
+  float: left;
+  text-align: center;
+  box-sizing: border-box;
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.squre view{
+  margin-top:20px;
+  color:#fff;
+  font-size:26rpx;
+}
+.index-img{
+  display: block;
+  margin:0 auto;
+  width:50rpx;
+  height:50rpx;
+}

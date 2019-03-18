@@ -1,0 +1,98 @@
+<!--page/component/add/add.wxml-->
+<!-- //遮罩层 -->
+<block wx:if="{{mask}}">
+  <view class="mask"></view>
+</block>
+
+<form catchsubmit="formSubmit" catchreset="formReset">
+  <!-- <view class="addOrder">添加销售记录</view> -->
+  <view class="add-main">
+    <!-- 产品名称： -->
+    <view class='main-squre'>
+      <view class='main-title'>产品名称：</view>
+      <view class="page__bd main-name">
+        <view class="weui-btn-area" bindchange="bindPickerChange">
+          <picker class="pp" bindchange="bindPickerChange" value="{{landarray[landindex]}}" range="{{landarray}}" range-key='label'>
+            <!-- <view class="named" wx:if="{{island == 1}}">{{land}}</view> -->
+            <view class="named">{{landarray[landindex].label}}</view>
+          </picker>
+        </view>
+      </view>
+    </view>
+    <view class='main-squre'>
+      <view class='main-title'>数量：</view>
+      <input class="inputName" value="" bindinput='check' name="num" placeholder='0' placeholder-style='color:rgb(138,138,138);font-size:30rpx;'></input>
+    </view>
+    <!-- 销售类型 -->
+    <view class='main-squre'>
+      <view class='main-title'>销售类型：</view>
+      <view class="page__bd main-name">
+        <view class="weui-btn-area" bindchange="typebindPickerChange">
+          <picker class="pp" bindchange="typebindPickerChange" value="{{typearray[typeindex]}}" range="{{typearray}}" range-key='label'>
+            <view class="named" wx:if="{{island == 1}}">{{land}}</view>
+            <view class="named" wx:else>{{typearray[typeindex].label}}</view>
+          </picker>
+        </view>
+      </view>
+      <!-- 下拉框 -->
+      <!-- <view class='list-msg2' bindtap='bindShowSalesMsg'>
+        <text>{{salesType}}</text>
+        <image style='height:20rpx;width:20rpx;' src='../../../../image/triangle-down@2x.png'></image>
+      </view> -->
+
+      <!-- 下拉需要显示的列表 -->
+      <!-- <scroll-view scroll-y="true" style="height: 200rpx;">
+        <view class="select_box" wx:if="{{selectSales}}" wx:for="{{selectSales}}" wx:for-index wx:for-item>
+          <input style='display:none' value="{{item.value}}" name="{{item.value}}"></input>
+          <view class="select_one" bindtap="mySalesSelect" data-id="{{item.value}}" data-name="{{item.label}}" name="{{item.label}}">{{item.label}}</view>
+        </view>
+      </scroll-view> -->
+    </view>
+    <!-- 详细地址 -->
+    <view class='main-squre'>
+      <view class='main-title'>详细地址：</view>
+      <input class="inputName" value="" name="address" placeholder='请输入' placeholder-style='color:rgb(138,138,138); font-size:30rpx;'></input>
+    </view>
+    <!-- 日期选择 -->
+    <view class="timer">
+      <view class='main-title'>销售时间：</view>
+      <picker mode="date" value="{{date}}"  bindchange="bindDateChange">
+        <view class="picker">
+          {{dates}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <!-- 地区选择 -->
+  <view class="area topall">
+    <view class='area-title main-title' id="address">地区选择：</view>
+    <view class="item" catchtap='goshow'>
+
+      <text class="item-content">{{province}} {{city}} {{area}}</text>
+    </view>
+    <view class="{{show == true?'showAddress':'noshow'}}">
+      <view class="btn">
+        <view class="nobtn" catchtap='n'>取消</view>
+        <view class="yesbtn" catchtap='y'>确定</view>
+      </view>
+      <picker-view indicator-style="height: 50px;" style="width: 100%;height: 150px;text-align: center" value="{{prIndex}}" bindchange="changeProvince2">
+        <picker-view-column>
+          <view wx:for="{{placeArray}}" wx:key="name" style="line-height: 50px">{{item.label}}</view>
+        </picker-view-column>
+      </picker-view>
+      <picker-view indicator-style="height: 50px;" style="width: 100%;height: 150px;text-align: center" value="{{crIndex}}" bindchange="changeCity2">
+        <picker-view-column>
+          <view wx:for="{{placeArray[pIndex].children}}" wx:key="name" style="line-height: 50px">{{item.label}}</view>
+        </picker-view-column>
+      </picker-view>
+      <picker-view indicator-style="height: 50px;" style="width: 100%;height: 150px;text-align: center" value="{{arIndex}}" bindchange="changeArea2">
+        <picker-view-column>
+          <view wx:for="{{placeArray[pIndex].children[cIndex].children}}" wx:key="*this" style="line-height: 50px">{{item.label}}</view>
+        </picker-view-column>
+      </picker-view>
+    </view>
+  </view>
+  <view class="{{show == true?'downsub':'sub'}}">
+    <button formType="submit" class="ti"> 提交 </button>
+  </view>
+</form>

@@ -1,0 +1,20 @@
+ <view class="test-bg">
+    <image src="../../image/bg_pic@3x.jpg" class="bg-image" mode="scaleToFill"></image>
+  </view>
+  <view class='tit'>
+    <text>农产品溯源系统</text>
+  </view>
+   <form class="page__bd" catchsubmit="formSubmit" catchreset="formReset">
+      <view class="login-phone">
+        <image src="../../image/iphone@2x.png" class="login-phoneimg"></image>
+        <input name="phone" placeholder="请输入账号" placeholder-style="color:#fff;font-size:35rpx;" value="farmer" />
+      </view>
+      <view class="login-phone">
+        <image src="../../image/locked@2x.png" class="login-phoneimg"></image>
+        <!-- 密码guji75733 -->
+        <input name="password" placeholder="密码" placeholder-style="color:#fff;font-size:35rpx;"  type="password" value="guji75733"/>
+      </view>
+      <view class="btn-area">
+        <button formType="submit" bindtap="loginBtn">登录</button>
+      </view>
+  </form>

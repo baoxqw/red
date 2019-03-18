@@ -1,0 +1,31 @@
+<!--page/component/add/add.wxml-->
+<form catchsubmit="formSubmit" catchreset="formReset">
+
+    <!-- 收货人： -->
+    <view class="top-fir">
+      <view class="add-name cl">收货人：</view>
+      <input class="inputName" value="" name="name" placeholder='请输入收货人名称' bindinput ="userNameInput"
+      placeholder-style='color:#777;font-size:30rpx;'></input>
+    </view>
+
+    <!-- 日期选择 -->
+    <view class="timer">
+      <view class='timer-title cl'>自提时间：</view>
+        <picker mode="date" value="{{date}}" bindchange="bindDateChange">  
+          <view class="picker">  
+              {{dates}}  
+          </view>  
+        </picker>
+    </view>
+    <!-- 记录人 -->
+    <view class="top-fir">
+      <view class="add-name cl">记录人：</view>
+      <input class="inputName" value="" name="person" placeholder='请输入' 
+       placeholder-style='color:#777;font-size:30rpx;'></input>
+    </view>
+  <view class="{{show == true?'nosub':'sub'}}">
+    <button formType="submit" class="create"> 立即创建</button>
+    <button catchtap='go' class="back"> 返回订单管理</button>
+  </view>
+</form>
+

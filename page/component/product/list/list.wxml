@@ -1,0 +1,70 @@
+<view class="search">
+  <view class="sea">
+    <image src="../../../../image/search@2x.png"></image>
+    <input placeholder='请输入商品名称' placeholder-style='color:rgb(174,174,174)' class="short" name="searchValue" bindinput="userNameInput"></input>
+    <block wx:if="{{add==true}}">
+      <view class="add" catchtap='add'>
+        添加产品信息
+        <!-- <image src="../../../../image/add@2x.png"></image> -->
+      </view>
+    </block>
+  </view>
+</view>
+<view class="list {{index == 0 ? 'first' : ''}}" wx:for="{{lists}}" wx:for-item wx:for-index>
+  <view class="list-infor">
+    <view class="list-tit">
+      <view class="theor">商品名称：</view>
+      <view class="thetrueor">{{item.name}}</view>
+    </view>
+    <view class="list-con">
+      <view class="or">商品尺寸：</view>
+      <view class="trueor">{{item.size}}</view>
+    </view>
+    <view class="list-con">
+      <view class="or">商品等级：</view>
+      <view class="trueor">{{item.level}}</view>
+    </view>
+    <view class="list-con">
+      <view class="or">商品描述：</view>
+      <view class="trueor">{{item.discribe}}</view>
+    </view>
+  </view>
+  <view class="list-btn">
+    <!-- <block wx:if="{{add==true}}">
+      <view class="list-add" bindtap="onChangeShowRoundState">添加轮次</view>
+    </block> -->
+    <view bindtap="navigatorTo" data-data="{{item}}">
+      <block wx:if="{{update==true}}">
+        <view class="list-up">编辑</view>
+      </block>
+    </view>
+
+    <block wx:if="{{deleted==true}}">
+      <view class="list-del" bindtap="onChangeShowState" data-data="{{item.id}}">删除</view>
+    </block>
+    <!-- 删除信息 -->
+    <view class="{{showView ? 'del-wrap_show' : 'del-wrap_hide'}}">
+      <view class='del'>
+        <view class="delate">确认删除该信息?</view>
+        <view class="no" catchtap='no'>取消</view>
+        <view class="yes" catchtap='yes'>确认</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 添加轮次 -->
+<view class="{{showAdd ? 'round_show' : 'round_hide'}}">
+  <view class='addround'>
+    <view class="roundTitle">添加种植轮次</view>
+    <view class="roundMain">
+      <view>关键词</view>
+      <input></input>
+    </view>
+    <view class="roundBtn">
+      <view class="roundNo" catchtap='roundNo'>取消</view>
+      <view class="roundYes" catchtap='roundYes'>确定</view>
+    </view>
+  </view>
+</view>
+<view class="bottom-line" wx:if="{{bottomLineShow==true}}">——我是有底线的——</view>

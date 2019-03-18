@@ -1,0 +1,83 @@
+/* 背景图 */
+
+page {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.test-bg {
+  width: 100%;
+  height: 100%;
+  background-color: #70c7da;
+}
+
+.bg-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* 标题 */
+
+.tit {
+  position: absolute;
+  top: 228rpx;
+  width: 100%;
+  text-align: center;
+  font-size: 50rpx;
+  color: #fff;
+  font-weight: 900;
+  font-family: "楷体";
+}
+
+/* form表单 */
+
+form {
+  font-size: 40rpx;
+}
+
+.page__bd {
+  position: absolute;
+  top: 350rpx;
+  width: 80%;
+  left: 10%;
+  min-height: 700rpx;
+  box-sizing: border-box;
+  padding: 10% 0%;
+}
+
+.login-phone {
+  width: 100%;
+  height: 100rpx;
+  margin: 0 auto;
+  line-height: 100rpx;
+  border-bottom: 1rpx solid #fff;
+  margin-bottom: 100rpx;
+  float: left;
+}
+
+.login-phoneimg {
+  display: inline-block;
+  width: 40rpx;
+  height: 50rpx;
+  margin-right: 30rpx;
+  float: left;
+}
+
+.login-phone input {
+  color: #fff;
+  float: left;
+  width: 80%;
+}
+
+.btn-area {
+  margin-top: 200rpx;
+}
+
+.btn-area button {
+  background: #579efe;
+  color: #fff;
+  border-radius: 50rpx;
+}

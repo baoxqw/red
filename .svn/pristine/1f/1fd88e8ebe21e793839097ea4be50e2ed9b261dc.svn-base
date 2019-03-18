@@ -1,0 +1,140 @@
+{
+  "pages": [
+    "page/logs/logs",
+    
+    "page/component/index/index",
+ 
+    "page/component/land/list/list",
+    "page/component/land/add/add",
+    "page/component/land/update/update",
+    "page/component/land/index/index",
+    "page/component/land/detail/detail",
+
+    "page/component/agricultural/add/add",
+    "page/component/agricultural/update/update",
+    "page/component/agricultural/list/list",
+    "page/component/agricultural/index/index",
+    "page/component/agricultural/search/search",
+
+    "page/component/farm/list/list",
+    "page/component/farm/add/add",
+    "page/component/farm/update/update",
+    "page/component/farm/index/index",
+
+    "page/component/goout/list/list",
+
+    "page/component/farmauthen/list/list",
+
+    "page/component/sellerauthen/list/list",
+
+    "page/component/perauthen/list/list",
+
+    "page/component/farmauthenreg/list/list",
+    "page/component/sellerauthenreg/list/list",
+    "page/component/perauthenreg/list/list",
+
+    "page/component/trade/list/list",
+    "page/component/trade/listChild/listChild",
+    "page/component/trade/add/add",
+    "page/component/trade/update/update",
+    "page/component/trade/index/index",
+
+    "page/component/saler/list/list",
+    "page/component/saler/add/add",
+    "page/component/saler/update/update",
+    "page/component/saler/index/index",
+
+    "page/component/pick/list/list",
+    "page/component/pick/add/add",
+    "page/component/pick/update/update",
+    "page/component/pick/index/index",
+
+    "page/component/stock/list/list",
+    "page/component/stock/add/add",
+    "page/component/stock/update/update",
+    "page/component/stock/index/index",
+
+    "page/component/work/list/list",
+    "page/component/work/add/add",
+    "page/component/work/update/update",
+    "page/component/work/index/index",
+
+    "page/component/workChild/list/list",
+    "page/component/workChild/add/add",
+    "page/component/workChild/update/update",
+    "page/component/workChild/index/index",
+
+    "page/component/product/list/list",
+    "page/component/product/add/add",
+    "page/component/product/update/update",
+    "page/component/product/index/index",
+
+    "page/component/grow/list/list",
+    "page/component/grow/add/add",
+    "page/component/grow/update/update",
+    "page/component/grow/index/index",
+
+    "page/component/order/list/list",
+    "page/component/order/orderlist/orderlist",
+    "page/component/order/updateChild/updateChild",
+    "page/component/order/add/add",
+    "page/component/order/update/update",
+    "page/component/order/index/index",
+    "page/component/order/fathadd/fathadd",
+
+    "page/component/orderChild/list/list",
+    "page/component/orderChild/add/add",
+    "page/component/orderChild/update/update",
+    "page/component/orderChild/index/index",
+
+    "page/component/package/list/list",
+    "page/component/package/add/add",
+    "page/component/package/update/update",
+    "page/component/package/index/index",
+
+    "page/component/inform/list/list",
+    "page/component/inform/add/add",
+    "page/component/inform/update/update",
+    "page/component/inform/index/index",
+    "page/component/inform/look/look",
+
+    "page/component/sales/list/list",
+    "page/component/sales/add/add",
+    "page/component/sales/update/update",
+    "page/component/sales/index/index",
+
+    "page/component/logistics/list/list",
+    "page/component/logistics/detail/detail",
+    "page/component/logistics/add/add",
+    "page/component/logistics/update/update",
+    "page/component/logistics/index/index",
+    "page/component/logistics/send/send",
+    "page/component/logistics/company/company",
+    "page/component/logistics/own/own",
+    "page/component/logistics/self/self",
+    "page/component/logistics/logistics/logistics",
+
+    "page/component/authen/list/list",
+    "page/component/authen/add/add",
+    "page/component/authen/update/update",
+    "page/component/authen/index/index",
+
+    "page/component/accountChild/list/list",
+    "page/component/accountChild/add/add",
+    "page/component/accountChild/update/update",
+    "page/component/accountChild/index/index"  
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "溯源",
+    "navigationBarBackgroundColor": "#fbf9fe",
+    "backgroundColor": "#fbf9fe"
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

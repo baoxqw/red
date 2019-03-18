@@ -1,0 +1,61 @@
+<view class="search">
+  <view class="sea">
+    <image src="../../../../image/search@2x.png"></image>
+    <input class="{{orderState==0?'short':'long'}}" placeholder='请输入商品名称' placeholder-style='color:rgb(174,174,174)' name="searchValue" bindinput="userNameInput"></input>
+    <block wx:if="{{orderState==0?true:false}}">
+      <view class="addOrder" catchtap='add'>
+        添加子订单
+        <!-- <image src="../../../../image/add@2x.png"></image> -->
+      </view>
+    </block>
+  </view>
+</view>
+<block wx:if="{{lis == true}}">
+  <view class="or" style="width:100%;height:60rpx;line-height:60rpx;text-align:center;font-size:30rpx;">暂无子订单</view>
+</block>
+<block wx:else>
+  <view class="list {{index == 0 ? 'first' : ''}}" wx:for="{{lists}}" wx:for-item wx:for-index>
+    <view class="list-infor">
+      <view class="list-con">
+        <view class="or">商品名称：</view>
+        <view class="trueor">{{item.name}}</view>
+      </view>
+      <view class="list-con">
+        <view class="or">购买数量：</view>
+        <view class="trueor">{{item.num}}</view>
+      </view>
+    </view>
+    <view class="list-btn">
+      <block wx:if="{{orderState==0?true:false}}">
+        <view class="list-uped" bindtap="updateTo" data-data="{{item}}">修改</view>
+        <!-- <view class="list-uped"  data-data="{{item}}">修改</view> -->
+      </block>
+      <block wx:if="{{orderState==0?true:false}}">
+        <view class="list-deled" bindtap="onChangeShowState" data-data="{{item.id}}">删除</view>
+      </block>
+    </view>
+    <!-- 删除信息 -->
+    <view class="{{showView ? 'del-wrap_show' : 'del-wrap_hide'}}">
+      <view class='del'>
+        <view class="delate">确认删除该信息?</view>
+        <view class="no" catchtap='no'>取消</view>
+        <view class="yes" catchtap='yes'>确认</view>
+      </view>
+    </view>
+  </view>
+  <!-- 添加轮次 -->
+  <view class="{{showAdd ? 'round_show' : 'round_hide'}}">
+    <view class='addround'>
+      <view class="roundTitle">添加种植轮次</view>
+      <view class="roundMain">
+        <view>关键词</view>
+        <input></input>
+      </view>
+      <view class="roundBtn">
+        <view class="roundNo" catchtap='roundNo'>取消</view>
+        <view class="roundYes" catchtap='roundYes'>确定</view>
+      </view>
+    </view>
+  </view>
+  </block>
+  <view class="bottom-line" wx:if="{{bottomLineShow==true}}">——我是有底线的——</view>

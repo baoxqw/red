@@ -1,0 +1,98 @@
+<!--page/component/add/add.wxml-->
+<!-- //遮罩层 -->
+<block wx:if="{{mask}}">
+  <view class="mask"></view>
+</block>
+<form catchsubmit="formSubmit" catchreset="formReset">
+  <view class="add-main">
+    <!-- 地块名称选择 -->
+    <view class='main-squre'>
+      <view class='main-title new-main'>地块名称：</view>
+      <view class="page__bd main-name">
+        <view class="weui-btn-area" bindchange="bindPickerChange">
+          <picker bindchange="bindPickerChange" value="{{landarray[landindex]}}" range="{{landarray}}" range-key='label'>
+            <view wx:if="{{landarray.length<1}}">暂无</view>
+            <view class="named" wx:else="{{landarray}}">{{landarray[landindex].label}}</view>
+          </picker>
+        </view>
+      </view>
+    </view>
+    <!-- 种植轮次选择 -->
+    <view class='main-squre'>
+      <view class='main-title new-main'>种植轮次：</view>
+      <view class="page__bd main-name">
+        <view class="weui-btn-area" bindchange="turnPickerChange">
+          <picker bindchange="turnPickerChange" value="{{turnarray[turnindex]}}" range="{{turnarray}}" range-key='label'>
+            <view class="named" wx:if="{{turnarray.length<1}}">暂无轮次</view>
+            <view class="named" wx:else="{{turnarray.length}}">{{turnarray[turnindex].label}}</view>
+          </picker>
+        </view>
+      </view>
+    </view>
+    <!-- 生长阶段：-->
+    <view class='main-squre'>
+      <view class='main-title new-main'>生长阶段：</view>
+      <view class="page__bd main-name">
+        <view class="weui-btn-area" bindchange="managebindPickerChange">
+          <picker bindchange="managebindPickerChange" value="{{managearray[manageindex]}}" range="{{managearray}}" range-key='label'>
+            <view wx:if="{{managearray.length<1}}">暂无</view>
+            <view class="named" wx:else="{{managearray}}">{{managearray[manageindex].label}}</view>
+          </picker>
+        </view>
+      </view>
+    </view>
+    <!-- </view> -->
+    <!-- 采摘过程图片 -->
+    <view class=' main-title new-main'>成长记录照片：</view>
+    <view class="squre-pic">
+      <view class="page__bd">
+        <view class="weui-cells">
+          <view class="weui-cell">
+            <view class="weui-cell__bd">
+              <view class="weui-uploader">
+                <view class="weui-uploader__bd">
+                  <view class="weui-uploader__files" id="uploaderFiles">
+                    <block wx:for="{{files}}" wx:key="*this">
+                      <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+                      <image bindtap='clearImg' class="clearImg" src="../../../../image/clean@2x.png" data-index="{{index}}"></image>
+                        <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                      </view>
+                    </block>
+                  </view>
+                  <view class="weui-uploader__input-box">
+                    <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 采摘过程视频 -->
+    <!-- <view class='main-title new-main'>农事管理视频：</view>
+    <view class="squre-pic">
+
+      <!-- 上传图片 -->
+      <!-- <view class="view_r">
+        <video class="{{video==''?' hide ':''}}" src='{{video}}'></video>
+        <view class="educt_upload_add {{video==''?'':'hide'}} " bindtap="geted" data-index="{{0}}">
+          <image src="../../../../image/plus.png"></image>
+        </view>
+      </view>
+    </view>  -->
+    <!-- 日期选择 -->
+
+    <view class="tim">
+      <view class='new-main new-m'>记录时间：</view>
+      <picker mode="date" value="{{date}}"  bindchange="bindDateChange">
+        <view class="picker">
+          {{dates}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class="sub">
+    <button formType="submit"> 提交 </button>
+  </view>
+</form>

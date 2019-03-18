@@ -1,0 +1,107 @@
+<!--page/component/add/add.wxml-->
+<!-- //遮罩层 -->
+<block wx:if="{{mask}}">
+  <view class="mask"></view>
+</block>
+
+<form catchsubmit="formSubmit" catchreset="formReset">
+  <view class="add-main">
+    <!-- 地块名称选择 -->
+    <view class='main-squre'>
+      <view class='main-title'>地块名称：</view>
+      <!-- 下拉框 -->
+      <view class='list-msg2' bindtap='bindShowMsg'>
+        <text>{{tihuoWay}}</text>
+        <image style='height:20rpx;width:20rpx;' src='../../../../image/triangle-down@2x.png'></image>
+      </view>
+      <!-- 下拉需要显示的列表 -->
+      <scroll-view scroll-y="true" style="height: 200rpx;">
+        <view class="select_box" wx:if="{{select}}" wx:for="{{selectSource}}" wx:for-index wx:for-item>
+            <input style='display:none' value="{{item.name}}" name="{{item.name}}"></input>
+            <view class="select_one" bindtap="mySelect" data-name="{{item.label}}" data-id="{{item.value}}" name="{{item.label}}">
+            {{item.label}}
+            </view>
+        </view>
+      </scroll-view>
+    </view>
+    <!-- 种植轮次选择 -->
+    <view class='main-squre'>
+      <view class='main-title'>种植轮次名称：</view>
+      <!-- 下拉框 -->
+      <view class='list-msg2' bindtap='turnShowMsg'>
+        <text>{{turn}}</text>
+        <image style='height:20rpx;width:20rpx;' src='../../../../image/triangle-down@2x.png'></image>
+      </view>
+      <!-- 下拉需要显示的列表 -->
+      <scroll-view scroll-y="true" style="height: 200rpx;">
+        <view class="select_box" wx:if="{{turnSelect}}" wx:for="{{turnSource}}" wx:for-index wx:for-item>
+            <input style='display:none' value="{{item.name}}" name="{{item.name}}"></input>
+            <view class="select_one" bindtap="turnSelect" value="{{item.label}}}" data-name="{{item.label}}" data-id="{{item.value}}">
+            {{item.label}}</view>
+        </view>
+      </scroll-view>
+    </view>
+    <!-- 生长阶段： -->
+    <view class='main-squre'>
+      <view class='main-title'>生长阶段：</view>
+      <!-- 下拉框 -->
+      <view class='list-msg2' bindtap='manShowMsg'>
+        <text>{{manage}}</text>
+        <image style='height:20rpx;width:20rpx;' src='../../../../image/triangle-down@2x.png'></image>
+      </view>
+      <!-- 下拉需要显示的列表 -->
+      <scroll-view scroll-y="true" style="height: 200rpx;">
+        <view class="select_box" wx:if="{{selectman}}" wx:for="{{selectmanSource}}" wx:for-index wx:for-item>
+            <input style='display:none' value="{{item.name}}" name="{{item.name}}"></input>
+            <view class="select_one" bindtap="manSelect" data-name="{{item.label}}" data-id="{{item.value}}" name="{{item.label}}">
+            {{item.label}}
+            </view>
+        </view>
+      </scroll-view>
+    </view>
+
+    <!-- 采摘过程图片 -->
+    <view class="squre-pic">
+      <view class='main-title'>农事管理照片：</view>
+      <view class="page__bd">
+        <view class="weui-cells">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <view class="weui-uploader">
+                        <!-- <view class="weui-uploader__hd">
+                            <view class="weui-uploader__title">图片上传</view>
+                            <view class="weui-uploader__info">{{files.length}}</view>
+                        </view> -->
+                        <view class="weui-uploader__bd">
+                            <view class="weui-uploader__files" id="uploaderFiles">
+                                <block wx:for="{{files}}" wx:key="*this">
+                                    <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+                                        <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                                    </view>
+                                </block>
+                            </view>
+                            <view class="weui-uploader__input-box">
+                                <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+      </view>
+    </view>
+    <!-- 日期选择 -->
+    <view class="timer">
+      <view class='timer-title'>记录时间：</view>
+        <picker mode="date" value="{{date}}" start="1978-01-01" end="2017-1-23" bindchange="bindDateChange">  
+          <view class="picker">  
+               {{dates}}  
+          </view>  
+        </picker>
+    </view>
+    </view>
+  <view class="sub">
+    <button formType="submit"> 提交 </button>
+  </view>
+</form>
+

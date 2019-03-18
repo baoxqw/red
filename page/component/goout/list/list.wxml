@@ -1,0 +1,45 @@
+<view class="search">
+  <view class="sea">
+    <image src="../../../../image/search@2x.png"></image>
+    <view class="box">
+      <input class="{{add == true?'short':'long'}}" placeholder='请输入子批次名称' placeholder-style='color:rgb(174,174,174)' name="searchValue" bindinput="userNameInput"></input>
+    </view>
+
+    <view class="inform-in">
+      <view class="all" class="{{nn == 1 ?'blued':''}}" bindtap="all">全部入库</view>
+      <view class="create" class="{{nn == 2 ?'blued':''}}" bindtap="create">入库记录</view>
+      <view class="accept" class="{{nn == 3 ?'blued':''}}" bindtap="accept">出库记录</view>
+    </view>
+  </view>
+</view>
+<view class="list {{index == 0 ? 'first' : ''}}" wx:for="{{lists}}" wx:for-item wx:for-index>
+  <view class="list-infor">
+    <!-- <view class="list-tit">{{item.massifName}}</view> -->
+    <view class="list-con">
+      <view class="theor">条码编号：</view>
+      <view class="thetrueor">{{item.ids}}</view>
+    </view>
+    <view class="list-con">
+      <view class="or">子批次名称：</view>
+      <view class="trueor">{{item.childbatchname}}</view>
+    </view>
+    <view class="list-con">
+      <view class="or">产品规格：</view>
+      <view class="trueor">{{item.childbatchpackagesize}}</view>
+    </view>
+    <view class="list-con">
+      <view class="or">重量：</view>
+      <view class="trueor">{{item.childbatchpackageweight}}</view>
+    </view>
+    <view class="list-con">
+      <view class="or">入库时间：</view>
+      <view class="trueor">{{item.time}}</view>
+    </view>
+    <view class="list-con">
+      <view class="or">等级：</view>
+      <view class="trueor">{{item.value}}</view>
+    </view>
+  </view>
+</view>
+
+<view class="bottom-line" wx:if="{{bottomLineShow==true}}">——我是有底线的——</view>

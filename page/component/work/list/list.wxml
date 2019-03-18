@@ -1,0 +1,66 @@
+<view class="search">
+  <view class="sea">
+    <image src="../../../../image/search@2x.png"></image>
+    <input placeholder='请输入操作人' placeholder-style='color:rgb(174,174,174)' class="theshort" name="searchValue" bindinput="userNameInput"></input>
+    <block>
+      <view class="addOrder" catchtap='add'>
+        添加加工批次
+        <!-- <image src="../../../../image/add@2x.png"></image> -->
+      </view>
+    </block>
+  </view>
+</view>
+<view class="list {{index == 0 ? 'first' : ''}}" wx:for="{{lists}}" wx:for-item wx:for-index>
+  <view class="list-infor">
+    <view class="list-con">
+      <view class="theor">加工批次：</view>
+      <view class="thetrueor">{{item.batchname}}</view>
+    </view>
+    <view class="list-con">
+      <view class="or">所属采摘批次：</view>
+      <view class="trueor">{{item.pickbatchName}}</view>
+    </view>
+    <view class="list-con">
+      <view class="or">烘干房编号：</view>
+      <view class="trueor">{{item.dryroomid}}</view>
+    </view>
+    <view class="list-con">
+      <view class="or">加工后总重量：</view>
+      <view class="trueor">{{item.batchtotalweight}}kg</view>
+    </view>
+    <view class="list-con">
+      <view class="or">加工后含水量：</view>
+      <view class="trueor">{{item.batchhumidity}}%</view>
+    </view>
+    <view class="list-con">
+      <view class="or">加工时间：</view>
+      <view class="trueor">{{item.batchtime}}</view>
+    </view>
+    <view class="list-con leftwidth">
+     <view class="or"> 操作人：</view>
+      <view class="trueor">{{item.processername}}</view>
+    </view>
+  </view>
+  <view class="list-btn">
+    <view bindtap="updateTo" data-data="{{item}}">
+      <block>
+        <view class="sea-order list-up" data-data="{{item}}">编辑</view>
+      </block>
+    </view>
+    <block>
+      <view class="del-order list-del" bindtap="onChangeShowState" data-data="{{item.id}}">删除</view>
+    </block>
+
+  </view>
+  <!-- 删除信息 -->
+  <view class="{{showView ? 'del-wrap_show' : 'del-wrap_hide'}}">
+    <view class='del'>
+      <view class="delate">确认删除该信息?</view>
+      <view class="no" catchtap='no'>取消</view>
+      <view class="yes" catchtap='yes'>确认</view>
+    </view>
+  </view>
+</view>
+
+<!-- 添加轮次 -->
+<view class="bottom-line" wx:if="{{bottomLineShow==true}}">——我是有底线的——</view>

@@ -1,0 +1,28 @@
+/* page/component/inform/look/look.wxss */
+.title{
+  height:70rpx;
+  line-height:50rpx;
+  text-align: center;
+  padding-top:54rpx;
+  border-top: 1px solid rgb(174,174,174);
+}
+.time{
+  font-size: 27rpx;
+  text-align: center;
+  height:40rpx;
+  line-height: 40rpx;
+}
+.notice{
+  margin-top:42rpx;
+  width:90%;
+  text-indent: 50rpx;
+  font-size: 34rpx;
+  height:66rpx;
+  line-height:66rpx;
+  color:#333;
+}
+.top{
+  width:90%;
+  min-height:200rpx;
+  padding:0 5% 5% 5%;
+}

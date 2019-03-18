@@ -1,0 +1,49 @@
+<view class="search">
+  <view class="sea">
+    <image src="../../../../image/search@2x.png"></image>
+    <input placeholder='请输入订单名称' placeholder-style='color:rgb(174,174,174)' name="searchValue" bindinput="userNameInput"></input>
+    <!-- <block wx:if="{{orderState==0?true:false}}">
+        <view class="addOrder" catchtap='add'>
+          添加子订单
+          <!-- <image src="../../../../image/add@2x.png"></image> -->
+    <!-- </view> -->
+    <!-- </block> -->
+    <view class="inform-in">
+      <view class="{{nn == 1 ?'blued':''}}" bindtap="all">全部</view>
+      <view class="create" class="{{nn == 2 ?'blued':''}}" bindtap="create">我处理的</view>
+      <view class="accept" class="{{nn == 3 ?'blued':''}}" bindtap="accept">待处理的</view>
+    </view>
+  </view>
+</view>
+<view class="list {{index == 0 ? 'first' : ''}}" wx:for="{{lists}}" wx:for-item wx:for-index>
+  <view class="list-infor">
+    <view class="list-con">
+      <view class="theor">订单名称：</view>
+      <view class="thetrueor">{{item.name}}</view>
+    </view>
+    <view class="list-con">
+      <view class="or">备注：</view>
+      <view class="trueor">{{item.description}}</view>
+    </view>
+    <view class="list-con">
+     <view class="or"> 订单状态：</view>
+      <view class="trueor">{{item.orderstateStr}}</view>
+    </view>
+    <view class="list-con">
+      <view class="or">处理人：</view>
+      <view class="trueor">{{item.manager}}</view>
+    </view>
+  </view>
+  <view class="list-btn">
+    <view class="list-add" bindtap="lookChild" data-data="{{item}}">查看子订单</view>
+    <block wx:if="{{item.orderstate==1?true:false}}">
+      <view class="update-order list-up" bindtap="handle" data-data="{{item.id}}">处理</view>
+    </block>
+
+
+  </view>
+
+
+</view>
+
+<view class="bottom-line" wx:if="{{bottomLineShow==true}}">——我是有底线的——</view>

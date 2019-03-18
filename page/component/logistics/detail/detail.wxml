@@ -1,0 +1,78 @@
+<!-- 订单信息 -->
+<view class="wu">
+  <view class="lef">订单信息</view>
+</view>
+<view class="list-con">
+  <view class="or">订单名称：</view>
+  <view class="trueor">{{lists.name}}</view>
+</view>
+<view class="list-con">
+  <view class="or">订单创建时间：</view>
+  <view class="trueor">{{time}}</view>
+</view>
+<view class="list-con">
+  <view class="or">订单地址：</view>
+  <view class="trueor">{{lists.cityStr}}</view>
+</view>
+<view class="list-con">
+  <view class="or">地区选择：</view>
+  <view class="trueor">{{lists.address}}</view>
+</view>
+<view class="list-con">
+  <view class="or">订单备注：</view>
+  <view class="trueor">{{lists.description}}</view>
+</view>
+<!-- 子订单信息 -->
+<view class="wu">
+  <view class="lef">子订单信息</view>
+</view>
+<view class="soninfor" wx:for="{{orderChild}}" wx:for-item wx:for-index>
+  <view class="list-con">
+    <view class="son">商品名称：</view>
+    <view class="newson">{{item.name}}</view>
+  </view>
+  <view class="list-con">
+    <view class="son">商品尺寸：</view>
+    <view class="newson">{{item.size}}</view>
+  </view>
+  <view class="list-con">
+    <view class="son">商品数量：</view>
+    <view class="newson">{{item.num}}</view>
+  </view>
+</view>
+
+<!-- 物流公司配送 -->
+<view class="wu">
+  <view class="lef">物流公司配送</view>
+</view>
+<!-- <view wx:for="{{orderLogistic}}" wx:for-item wx:for-index> -->
+<view class="list-con">
+  <view class="or">收货人姓名：</view>
+  <view class="trueor">{{orderLogistic.consignee}}</view>
+</view>
+<view class="list-con">
+  <view class="or">收货地区：</view>
+  <view class="trueor">{{province}} {{city}} {{area}}</view>
+</view>
+<view class="list-con">
+  <view class="or">收货地址：</view>
+  <view class="trueor">{{orderLogistic.address}}</view>
+</view>
+<view class="list-con">
+  <view class="or">预计抵达时间：</view>
+  <view class="trueor">{{logisticTime}}</view>
+</view>
+<view class="list-con">
+  <view class="or">记录人：</view>
+  <view class="trueor">{{orderLogistic.operatorid}}</view>
+</view>
+<!-- </view> -->
+<view class="ebtn">
+  <view class="esure" catchtap='go'>
+    确定
+  </view>
+  <view class="enosure" catchtap='nogo'>
+    取消
+  </view>
+</view>
+

@@ -1,0 +1,55 @@
+<view class="search">
+  <view class="sea">
+    <image src="../../../../image/search@2x.png"></image>
+    <input placeholder='请输入订单名称' placeholder-style='color:rgb(174,174,174)' name="searchValue" bindinput="userNameInput"></input>
+  </view>
+</view>
+<view class="list {{index == 0 ? 'first' : ''}}" wx:for="{{lists}}" wx:for-item wx:for-index>
+  <view class="list-infor">
+    <view class="list-tit">
+      <view class="name bigname">订单名称：</view> 
+      <view class="truename">{{item.name}}</view>
+    </view>
+    <view class="list-con">
+      <view class="name" >备注：</view>
+      <view class="truename">
+        {{item.description}}
+      </view>
+    </view>
+    <view class="list-con">
+      <view class="name" >订单状态：</view>
+      <view class="truename">{{item.state}}</view>
+    </view>
+  </view>
+  <view class="list-btn">
+    <block wx:if="{{item.orderstate == 4}}">
+      <view class="list-del list-detail" bindtap="detail" data-data="{{item}}">详情</view>
+    </block>
+    <block wx:if="{{item.orderstate == 3}}">
+      <view class="list-logistic" bindtap="logistic" data-data="{{item}}">物流发货</view>
+    </block>
+    <view class="{{showView ? 'del-wrap_show' : 'del-wrap_hide'}}">
+      <view class='del'>
+        <view class="delate">确认删除该信息?</view>
+        <view class="no" catchtap='no'>取消</view>
+        <view class="yes" catchtap='yes'>确认</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 添加轮次 -->
+<view class="{{showAdd ? 'round_show' : 'round_hide'}}">
+  <view class='addround'>
+    <view class="roundTitle">添加种植轮次</view>
+    <view class="roundMain">
+      <view>关键词</view>
+      <input></input>
+    </view>
+    <view class="roundBtn">
+      <view class="roundNo" catchtap='roundNo'>取消</view>
+      <view class="roundYes" catchtap='roundYes'>确定</view>
+    </view>
+  </view>
+</view>
+<view class="bottom-line" wx:if="{{bottomLineShow==true}}">——我是有底线的——</view>
